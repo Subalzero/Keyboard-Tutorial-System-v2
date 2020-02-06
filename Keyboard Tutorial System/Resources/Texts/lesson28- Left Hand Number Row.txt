@@ -1,0 +1,53 @@
+a1a1
+a1a1
+s2s2
+s2s2
+d3d3
+f4f4
+f5f5
+f5f5
+a1s2
+d3f4
+f4f4
+a11a
+s22s
+d33d
+f44s
+f55f
+a1s2
+d3f4
+f44s
+f55f
+a1s2
+d3f4
+f5f4
+d3s2
+a1d3
+s2d5
+f4d3
+122
+345
+123
+345
+545
+321
+543
+321
+ad24f
+5d351
+a112
+5223
+f334
+f445
+112
+321
+425
+543
+241
+1,425
+3,214
+I have 2 dogs.
+Sam has 1 cat.
+Ben is 22
+12 eggs in a dozen.
+6 donuts in a dozen.

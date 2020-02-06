@@ -1,0 +1,41 @@
+#pragma once
+
+//////////////////////////////////////////////////
+// PRE-PROCESSOR DERIVATIVES
+//////////////////////////////////////////////////
+#define WIN32_LEAN_AND_MEAN
+#ifndef UNICODE
+#define UNICODE
+#endif
+
+////////////////////////////////////////////////////
+// .LIB FILES
+////////////////////////////////////////////////////
+#pragma comment(lib, "d2d1.lib")
+#pragma comment(lib, "dwrite.lib")
+#pragma comment(lib, "Winmm.lib")
+
+////////////////////////////////////////////////////
+// DISABLE WARNINGS
+////////////////////////////////////////////////////
+#pragma warning(disable :  4996)
+
+////////////////////////////////////////////////////
+// INCLUDE FILES
+////////////////////////////////////////////////////
+#include <windows.h>
+#include <d2d1.h>
+#include <dwrite.h>
+#include <string>
+#include <sapi.h>
+#include <sphelper.h>
+#include <atlbase.h>
+#include <thread>
+#include <vector>
+#include <sstream>
+#include <fstream>
+#include <cwctype>
+#include <iomanip>
+
+
+#include "resource.h"

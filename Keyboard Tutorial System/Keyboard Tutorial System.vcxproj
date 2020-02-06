@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{495F7700-0E9E-4397-A18E-A6A5336FC316}</ProjectGuid>
+    <RootNamespace>KeyboardTutorialSystem</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Drawable.cpp" />
+    <ClCompile Include="Exception.cpp" />
+    <ClCompile Include="GameMenuScene.cpp" />
+    <ClCompile Include="Graphics2D.cpp" />
+    <ClCompile Include="ILesson.cpp" />
+    <ClCompile Include="Keyboard.cpp" />
+    <ClCompile Include="KeyboardTutorialSystem.cpp" />
+    <ClCompile Include="Lessons.cpp" />
+    <ClCompile Include="Lessons2.cpp" />
+    <ClCompile Include="Lessons3.cpp" />
+    <ClCompile Include="Lessons4.cpp" />
+    <ClCompile Include="Lessons5.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Mouse.cpp" />
+    <ClCompile Include="QuitMessageScene.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SceneCallback.cpp" />
+    <ClCompile Include="ScoreScene.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TextToSpeech.cpp" />
+    <ClCompile Include="TTSVoiceCallback.cpp" />
+    <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="View.cpp" />
+    <ClCompile Include="Window.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Application.h" />
+    <ClInclude Include="Drawable.h" />
+    <ClInclude Include="Exception.h" />
+    <ClInclude Include="GameMenuScene.h" />
+    <ClInclude Include="Graphics2D.h" />
+    <ClInclude Include="ILesson.h" />
+    <ClInclude Include="Keyboard.h" />
+    <ClInclude Include="KeyboardTutorialSystem.h" />
+    <ClInclude Include="Lessons.h" />
+    <ClInclude Include="Lessons2.h" />
+    <ClInclude Include="Lessons3.h" />
+    <ClInclude Include="Lessons4.h" />
+    <ClInclude Include="Lessons5.h" />
+    <ClInclude Include="Mouse.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="QuitMessageScene.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneCallback.h" />
+    <ClInclude Include="ScoreScene.h" />
+    <ClInclude Include="SelectionMenuCallback.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="TextToSpeech.h" />
+    <ClInclude Include="TTSVoiceCallback.h" />
+    <ClInclude Include="Utils.h" />
+    <ClInclude Include="View.h" />
+    <ClInclude Include="Window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\Images\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Resources\Texts\21. The B Key.txt" />
+    <Text Include="Resources\Texts\22. The Quotation Mark.txt" />
+    <Text Include="Resources\Texts\23. The Q Key.txt" />
+    <Text Include="Resources\Texts\24. The Colon Key.txt" />
+    <Text Include="Resources\Texts\25. The P Key.txt" />
+    <Text Include="Resources\Texts\26. The X Key.txt" />
+    <Text Include="Resources\Texts\27. The Z Key.txt" />
+    <Text Include="Resources\Texts\28. Left Hand Number Row.txt" />
+    <Text Include="Resources\Texts\29. Right Hand Number Row.txt" />
+    <Text Include="Resources\Texts\30. The Intire Number Row.txt" />
+    <Text Include="Resources\Texts\Lesson 11 - The V Key.txt" />
+    <Text Include="Resources\Texts\Lesson 12 - The W Key.txt" />
+    <Text Include="Resources\Texts\Lesson 13 - The O Key.txt" />
+    <Text Include="Resources\Texts\Lesson 14 - Capital Letters.txt" />
+    <Text Include="Resources\Texts\Lesson 15 - C and Comma.txt" />
+    <Text Include="Resources\Texts\Lesson 16 - T and Period.txt" />
+    <Text Include="Resources\Texts\Lesson 17 - Question Mark.txt" />
+    <Text Include="Resources\Texts\Lesson 18 - The M Key.txt" />
+    <Text Include="Resources\Texts\Lesson 19 - The Y Key.txt" />
+    <Text Include="Resources\Texts\Lesson 20 - Apostrophe.txt" />
+    <Text Include="Resources\Texts\lesson 31 Exclamation mark and %40 symbol.txt" />
+    <Text Include="Resources\Texts\lesson1-The Right hand.txt" />
+    <Text Include="Resources\Texts\lesson10- The N Key.txt" />
+    <Text Include="Resources\Texts\lesson11- The V Key.txt" />
+    <Text Include="Resources\Texts\lesson12- The W Key.txt" />
+    <Text Include="Resources\Texts\lesson13- The O Key.txt" />
+    <Text Include="Resources\Texts\lesson14 - Capital Letters.txt" />
+    <Text Include="Resources\Texts\lesson15- C and Comma.txt" />
+    <Text Include="Resources\Texts\lesson16 - T and Period.txt" />
+    <Text Include="Resources\Texts\lesson17- Question Mark.txt" />
+    <Text Include="Resources\Texts\lesson18- The M Key.txt" />
+    <Text Include="Resources\Texts\lesson19- The Y Key.txt" />
+    <Text Include="Resources\Texts\lesson2- The left hand.txt" />
+    <Text Include="Resources\Texts\lesson20- Apostrophe.txt" />
+    <Text Include="Resources\Texts\lesson21- The B Key.txt" />
+    <Text Include="Resources\Texts\lesson22- The Quotation Mark.txt" />
+    <Text Include="Resources\Texts\lesson23- The Q Key.txt" />
+    <Text Include="Resources\Texts\lesson24- The Colon Key.txt" />
+    <Text Include="Resources\Texts\lesson25- The P Key.txt" />
+    <Text Include="Resources\Texts\lesson26- The X Key.txt" />
+    <Text Include="Resources\Texts\lesson27- The Z Key.txt" />
+    <Text Include="Resources\Texts\lesson28- Left Hand Number Row.txt" />
+    <Text Include="Resources\Texts\lesson29- Right Hand Number Row.txt" />
+    <Text Include="Resources\Texts\lesson3- The home row.txt" />
+    <Text Include="Resources\Texts\lesson30- The Intire Number Row.txt" />
+    <Text Include="Resources\Texts\lesson31- Exclamation mark and %40 symbol.txt" />
+    <Text Include="Resources\Texts\lesson32- Number and dollar sign.txt" />
+    <Text Include="Resources\Texts\lesson33- percent and caret.txt" />
+    <Text Include="Resources\Texts\lesson34- Ampersand and asterisk.txt" />
+    <Text Include="Resources\Texts\lesson35- left and right parenthesis.txt" />
+    <Text Include="Resources\Texts\lesson36- Underscore and hyphen.txt" />
+    <Text Include="Resources\Texts\lesson37- equal and plus.txt" />
+    <Text Include="Resources\Texts\lesson38- square and brackets.txt" />
+    <Text Include="Resources\Texts\lesson39- curly brackets.txt" />
+    <Text Include="Resources\Texts\lesson4- The I Key.txt" />
+    <Text Include="Resources\Texts\lesson40- less than and greater than.txt" />
+    <Text Include="Resources\Texts\lesson41- forward slash and backslash.txt" />
+    <Text Include="Resources\Texts\lesson42- tilde and grave accent.txt" />
+    <Text Include="Resources\Texts\lesson43- Numpad.txt" />
+    <Text Include="Resources\Texts\lesson5- The E key.txt" />
+    <Text Include="Resources\Texts\lesson6- The H Key.txt" />
+    <Text Include="Resources\Texts\lesson7- The G Key.txt" />
+    <Text Include="Resources\Texts\lesson8- The R Key.txt" />
+    <Text Include="Resources\Texts\lesson9- The U Key.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Resources\Audio\check.wav" />
+    <Media Include="Resources\Audio\complete.wav" />
+    <Media Include="Resources\Audio\select.wav" />
+    <Media Include="Resources\Audio\wrong.wav" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
