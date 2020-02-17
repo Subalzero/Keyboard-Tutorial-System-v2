@@ -146,6 +146,7 @@
     <ClCompile Include="Lessons4.cpp" />
     <ClCompile Include="Lessons5.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainMenuScene.cpp" />
     <ClCompile Include="Mouse.cpp" />
     <ClCompile Include="QuitMessageScene.cpp" />
     <ClCompile Include="Scene.cpp" />
@@ -159,6 +160,8 @@
     </ClCompile>
     <ClCompile Include="TextToSpeech.cpp" />
     <ClCompile Include="TTSVoiceCallback.cpp" />
+    <ClCompile Include="UserList.cpp" />
+    <ClCompile Include="UserListScene.cpp" />
     <ClCompile Include="Utils.cpp" />
     <ClCompile Include="View.cpp" />
     <ClCompile Include="Window.cpp" />
@@ -177,6 +180,7 @@
     <ClInclude Include="Lessons3.h" />
     <ClInclude Include="Lessons4.h" />
     <ClInclude Include="Lessons5.h" />
+    <ClInclude Include="MainMenuScene.h" />
     <ClInclude Include="Mouse.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="QuitMessageScene.h" />
@@ -188,6 +192,8 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="TextToSpeech.h" />
     <ClInclude Include="TTSVoiceCallback.h" />
+    <ClInclude Include="UserList.h" />
+    <ClInclude Include="UserListScene.h" />
     <ClInclude Include="Utils.h" />
     <ClInclude Include="View.h" />
     <ClInclude Include="Window.h" />

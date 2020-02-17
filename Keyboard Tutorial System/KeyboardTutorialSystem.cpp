@@ -15,9 +15,6 @@ rescan::KeyboardTutorialSystem::KeyboardTutorialSystem(const std::wstring& comma
 	rect.size.height = double(rc.bottom) - (double)rc.top;
 	menuScene = new GameMenuScene(rect, wnd.Gfx(), &wnd.kbd, tts);
 	menuScene->callback = this;
-	focusedScene = menuScene;
-	focusedScene->Begin();
-	scenes.push_back(menuScene);
 
 	lesson1 = new Lesson1(rect, wnd.Gfx(), &wnd.kbd, &wnd.mouse, tts);
 	lesson2 = new Lesson2(rect, wnd.Gfx(), &wnd.kbd, &wnd.mouse, tts);
@@ -114,6 +111,16 @@ rescan::KeyboardTutorialSystem::KeyboardTutorialSystem(const std::wstring& comma
 
 	quitScene = std::make_unique<QuitMessageScene>(rect, wnd.Gfx(), tts);
 	quitScene->callback = this;
+
+	mainMenuScene = std::make_unique<MainMenuScene>(rect, wnd.Gfx(), tts, &wnd.kbd);
+	mainMenuScene->callback = this;
+
+	userListScene = std::make_unique<UserListScene>(rect, wnd.Gfx(), tts, &wnd.kbd);
+	userListScene->callback = this;
+
+	focusedScene = mainMenuScene.get();
+	mainMenuScene->Begin();
+	scenes.push_back(mainMenuScene.get());
 }
 
 rescan::KeyboardTutorialSystem::~KeyboardTutorialSystem()
@@ -177,13 +184,46 @@ void rescan::KeyboardTutorialSystem::SceneHasBegun(Scene* scene, void* context)
 
 void rescan::KeyboardTutorialSystem::SceneHasEnded(Scene* scene, void* context)
 {
-	if (GameMenuScene * sc = dynamic_cast<GameMenuScene*>(scene))
+	if (MainMenuScene * sc = dynamic_cast<MainMenuScene*>(scene))
 	{
-		GameMenuScene::GameMenuSceneContext* cont = reinterpret_cast<GameMenuScene::GameMenuSceneContext*>(context);
+		MainMenuScene::MainMenuSceneContext* cont = reinterpret_cast<MainMenuScene::MainMenuSceneContext*>(context);
 		if (cont->isExit)
 		{
 			focusedScene = quitScene.get();
 			quitScene->Begin();
+			return;
+		}
+		if (cont->index == 0)
+		{
+			focusedScene = userListScene.get();
+			userListScene->Begin();
+			scenes.push_back(userListScene.get());
+		}
+		else if (cont->index == 1)
+		{
+			focusedScene = quitScene.get();
+			quitScene->Begin();
+		}
+	}
+	else if (UserListScene * sc = dynamic_cast<UserListScene*>(scene))
+	{
+		UserListScene::UserListSceneContext* cont = reinterpret_cast<UserListScene::UserListSceneContext*>(context);
+		if (cont->isExit)
+		{
+			scenes.pop_back();
+			focusedScene = scenes.back();
+			focusedScene->Begin();
+			return;
+		}
+	}
+	else if (GameMenuScene * sc = dynamic_cast<GameMenuScene*>(scene))
+	{
+		GameMenuScene::GameMenuSceneContext* cont = reinterpret_cast<GameMenuScene::GameMenuSceneContext*>(context);
+		if (cont->isExit)
+		{
+			scenes.pop_back();
+			focusedScene = scenes.back();
+			focusedScene->Begin();
 			return;
 		}
 		ILesson* lesson = lessonList[cont->selectedLesson];
@@ -220,7 +260,7 @@ void rescan::KeyboardTutorialSystem::SceneHasEnded(Scene* scene, void* context)
 	{
 		QuitMessageScene::QuitMessageSceneContext* cont =
 			reinterpret_cast<QuitMessageScene::QuitMessageSceneContext*>(context);
-		if (GameMenuScene * prevScene = dynamic_cast<GameMenuScene*>(scenes.back()))
+		if (MainMenuScene * prevScene = dynamic_cast<MainMenuScene*>(scenes.back()))
 		{
 			if (cont->returnType == QuitMessageScene::Type::QuitMessageScene_OK)
 			{
