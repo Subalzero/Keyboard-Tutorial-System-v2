@@ -37,13 +37,17 @@ rescan::ILesson::ILesson(Rect rect, Graphics2D* graphics, Keyboard* kbd, Mouse* 
 	if (FAILED(hr))
 		throw WND_EXCEPT(hr);
 
+	RECT rc;
+	GetClientRect(pGraphics->GetWindow(), &rc);
+	float ratio = (float(rc.bottom) - float(rc.top)) / 1080;
+
 	hr = pGraphics->GetDWriteFactory()->CreateTextFormat(
 		L"Segoe UI",
 		NULL,
 		DWRITE_FONT_WEIGHT_BOLD,
 		DWRITE_FONT_STYLE_NORMAL,
 		DWRITE_FONT_STRETCH_NORMAL,
-		fontSize,
+		fontSize * ratio,
 		L"en_us",
 		&pTextFormat
 	);
@@ -104,6 +108,7 @@ void rescan::ILesson::Draw()
 {
 	RECT rc;
 	GetClientRect(pGraphics->GetWindow(), &rc);
+	float ratio = (float(rc.bottom) - float(rc.top)) / 1080;
 	D2D1_RECT_F rect = {
 		30.f,
 		(rc.bottom - fontSize) * 0.5f,
@@ -122,7 +127,7 @@ void rescan::ILesson::Draw()
 			1,
 			pTextFormat,
 			fontSize * 0.6666f,
-			fontSize,
+			fontSize * ratio,
 			&textLayout
 		);
 		if (SUCCEEDED(hr))

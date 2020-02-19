@@ -11,6 +11,8 @@
 #include "Lessons5.h"
 #include "ScoreScene.h"
 #include "QuitMessageScene.h"
+#include "MainMenuScene.h"
+#include "UserListScene.h"
 
 #define LESSON(i) lesson##i
 
@@ -79,6 +81,10 @@ namespace rescan
 		std::unique_ptr<ScoreScene> scoreScene;
 
 		std::unique_ptr<QuitMessageScene> quitScene;
+
+		std::unique_ptr<MainMenuScene> mainMenuScene;
+
+		std::unique_ptr<UserListScene> userListScene;
 
 		std::vector<ILesson*> lessonList;
 

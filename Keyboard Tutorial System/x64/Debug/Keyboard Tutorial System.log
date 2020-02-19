@@ -1,4 +1,4 @@
 ﻿  ILesson.cpp
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\ILesson.cpp(93,37): warning C4267:  '+=': conversion from 'size_t' to 'unsigned int', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\ILesson.cpp(157,30): warning C4267:  '=': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\ILesson.cpp(97,37): warning C4267:  '+=': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\ILesson.cpp(162,30): warning C4267:  '=': conversion from 'size_t' to 'unsigned int', possible loss of data
   Keyboard Tutorial System.vcxproj -> C:\Users\Alzer\source\repos\KeyboardTutorialSystem\x64\Debug\Keyboard Tutorial System.exe
