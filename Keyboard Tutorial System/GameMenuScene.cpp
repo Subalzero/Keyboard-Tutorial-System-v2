@@ -185,6 +185,15 @@ rescan::GameMenuScene::GameMenuScene(Rect frame, Graphics2D* graphics, Keyboard*
 	lessonList.push_back(L"Lesson 42: Tilde and Grave Accent");
 	lessonList.push_back(L"Lesson 43: Numpad");
 
+	// Get Screen ratio relative to 1080p screen.
+	RECT rect;
+	GetClientRect(graphics->GetWindow(), &rect);
+	float ratioX = ((float)rect.right - (float)rect.left) / (float)1920;
+	float ratioY = ((float)rect.bottom - (float)rect.top) / (float)1080;
+
+	std::wstringstream wss;
+	wss << ratioX << L" " << ratioY;
+	OutputDebugString(wss.str().c_str());
 	// Draw the arrows.
 	ID2D1GeometrySink* pSink = nullptr;
 	hr = pUpArrowPath->Open(&pSink);
@@ -195,19 +204,19 @@ rescan::GameMenuScene::GameMenuScene(Rect frame, Graphics2D* graphics, Keyboard*
 		pSink->SetFillMode(D2D1_FILL_MODE_WINDING);
 		pSink->BeginFigure(
 			D2D1::Point2F(
-				PixelsToDIP((rc.right - 480.f) * 0.5f + 480.f),
-				PixelsToDIP(275.f)
+				PixelsToDIP((rc.right - 480.f) * 0.5f * ratioX + 480.f * ratioX),
+				PixelsToDIP(275.f * ratioY)
 			),
 			D2D1_FIGURE_BEGIN_FILLED
 		);
 		D2D1_POINT_2F points[] = {
 			D2D1::Point2F(
-				PixelsToDIP((rc.right - 480.f) * 0.5f + 480.f + 15.f),
-				PixelsToDIP(290.f)
+				PixelsToDIP((rc.right - 480.f) * 0.5f * ratioX + 480.f * ratioX + 15.f),
+				PixelsToDIP(290.f * ratioY)
 			),
 			D2D1::Point2F(
-				PixelsToDIP((rc.right - 480.f) * 0.5f + 480.f - 15.f),
-				PixelsToDIP(290.f)
+				PixelsToDIP((rc.right - 480.f) * 0.5f * ratioX + 480.f * ratioX - 15.f),
+				PixelsToDIP(290.f * ratioY)
 			)
 		};
 		pSink->AddLines(points, ARRAYSIZE(points));
@@ -230,19 +239,19 @@ rescan::GameMenuScene::GameMenuScene(Rect frame, Graphics2D* graphics, Keyboard*
 		pSink->SetFillMode(D2D1_FILL_MODE_WINDING);
 		pSink->BeginFigure(
 			D2D1::Point2F(
-				PixelsToDIP((rc.right - 480.f) * 0.5f + 480.f),
-				PixelsToDIP(985.f)
+				PixelsToDIP((rc.right - 480.f) * 0.5f * ratioX + 480.f * ratioX),
+				PixelsToDIP(985.f * ratioY)
 			),
 			D2D1_FIGURE_BEGIN_FILLED
 		);
 		D2D1_POINT_2F points[] = {
 			D2D1::Point2F(
-				PixelsToDIP((rc.right - 480.f) * 0.5f + 480.f + 15),
-				PixelsToDIP(970.f)
+				PixelsToDIP((rc.right - 480.f) * 0.5f * ratioX + 480.f * ratioX + 15),
+				PixelsToDIP(970.f * ratioY)
 			),
 			D2D1::Point2F(
-				PixelsToDIP((rc.right - 480.f) * 0.5f + 480.f - 15),
-				PixelsToDIP(970.f)
+				PixelsToDIP((rc.right - 480.f) * 0.5f * ratioX + 480.f * ratioX - 15),
+				PixelsToDIP(970.f * ratioY)
 			)
 		};
 		pSink->AddLines(points, ARRAYSIZE(points));
@@ -323,21 +332,26 @@ rescan::GameMenuScene::~GameMenuScene()
 
 void rescan::GameMenuScene::Draw()
 {
+	// Get Screen ratio relative to 1080p screen.
+	RECT rect;
+	GetClientRect(pGraphics->GetWindow(), &rect);
+	float ratioX = ((float)rect.right - (float)rect.left) / (float)1920;
+	float ratioY = ((float)rect.bottom - (float)rect.top) / (float)1080;
 	RECT rc = {};
 	GetClientRect(pGraphics->GetWindow(), &rc);
-	rc.left = 480;
-	rc.top = 100;
+	rc.left = 480 * ratioX;
+	rc.top = 100 * ratioY;
 	D2D1_RECT_F menuSubtitleRect = {
-		PixelsToDIP(50.f + rc.left),
-		PixelsToDIP(100.f + rc.top),
-		PixelsToDIP(rc.right - 50.f),
-		PixelsToDIP(135.f + rc.top)
+		PixelsToDIP(50.f * ratioX + rc.left) ,
+		PixelsToDIP(100.f * ratioY + rc.top),
+		PixelsToDIP(rc.right - 50.f * ratioX),
+		PixelsToDIP(135.f * ratioY + rc.top)
 	};
 	D2D1_RECT_F menuChoicesRect = {
-		PixelsToDIP(100.f + rc.left),
-		PixelsToDIP(250.f + rc.top),
-		PixelsToDIP(rc.right - 100.f),
-		PixelsToDIP(285.f)
+		PixelsToDIP(100.f * ratioX + rc.left),
+		PixelsToDIP(250.f * ratioY + rc.top),
+		PixelsToDIP(rc.right - 100.f * ratioX),
+		PixelsToDIP(285.f * ratioY)
 	};
 	D2D1_RECT_F menuFilledRect = {
 		PixelsToDIP(rc.left),
@@ -409,15 +423,15 @@ void rescan::GameMenuScene::Draw()
 				pTextBrush
 			);
 		}
-		menuChoicesRect.top += 55.f;
-		menuChoicesRect.bottom += 55.f;
+		menuChoicesRect.top += 55.f * ratioY;
+		menuChoicesRect.bottom += 55.f * ratioY;
 	}
 
 	D2D1_RECT_F upperRect = {
 		0.f,
 		0.f,
 		PixelsToDIP(rc.right),
-		PixelsToDIP(100.f)
+		PixelsToDIP(100.f * ratioY)
 	};
 
 	pGraphics->GetRenderTarget()->FillRectangle(
@@ -427,8 +441,8 @@ void rescan::GameMenuScene::Draw()
 
 	D2D1_RECT_F sideRect = {
 		0.f,
-		PixelsToDIP(100.f),
-		PixelsToDIP(480.f),
+		PixelsToDIP(100.f * ratioY),
+		PixelsToDIP(480.f * ratioX),
 		PixelsToDIP(rc.bottom)
 	};
 
@@ -440,8 +454,8 @@ void rescan::GameMenuScene::Draw()
 	D2D1_RECT_F titleRect = {
 		0.f,
 		0.f,
-		PixelsToDIP(480.f),
-		PixelsToDIP(100.f)
+		PixelsToDIP(480.f * ratioX),
+		PixelsToDIP(100.f * ratioY)
 	};
 
 	pGraphics->GetRenderTarget()->DrawTextW(

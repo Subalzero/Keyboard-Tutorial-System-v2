@@ -6,6 +6,9 @@ rescan::KeyboardTutorialSystem::KeyboardTutorialSystem(const std::wstring& comma
 	focusedScene(nullptr)
 {
 	tts = new TextToSpeech(SPCAT_VOICES_ONECORE, 1);
+	int cx = GetSystemMetrics(SM_CXSCREEN);
+	int cy = GetSystemMetrics(SM_CYSCREEN);
+	SetWindowPos(wnd.Gfx()->GetWindow(), NULL, 0, 0, cx, cy, NULL);
 	RECT rc;
 	GetClientRect(wnd.Gfx()->GetWindow(), &rc);
 	Rect rect;
@@ -195,9 +198,9 @@ void rescan::KeyboardTutorialSystem::SceneHasEnded(Scene* scene, void* context)
 		}
 		if (cont->index == 0)
 		{
-			focusedScene = userListScene.get();
-			userListScene->Begin();
-			scenes.push_back(userListScene.get());
+			focusedScene = menuScene;
+			focusedScene->Begin();
+			scenes.push_back(focusedScene);
 		}
 		else if (cont->index == 1)
 		{
