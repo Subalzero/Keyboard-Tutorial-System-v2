@@ -148,6 +148,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenuScene.cpp" />
     <ClCompile Include="Mouse.cpp" />
+    <ClCompile Include="NewUserScene.cpp" />
     <ClCompile Include="QuitMessageScene.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneCallback.cpp" />
@@ -182,6 +183,7 @@
     <ClInclude Include="Lessons5.h" />
     <ClInclude Include="MainMenuScene.h" />
     <ClInclude Include="Mouse.h" />
+    <ClInclude Include="NewUserScene.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="QuitMessageScene.h" />
     <ClInclude Include="resource.h" />

@@ -1,8 +1,4 @@
-﻿  KeyboardTutorialSystem.cpp
-  UserListScene.cpp
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\UserListScene.cpp(67,4): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\UserListScene.cpp(77,4): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
-  main.cpp
-  Generating Code...
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\UserListScene.cpp(146,28): warning C4267:  '=': conversion from 'size_t' to 'unsigned int', possible loss of data
+﻿  ILesson.cpp
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\ILesson.cpp(97,37): warning C4267:  '+=': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\ILesson.cpp(162,30): warning C4267:  '=': conversion from 'size_t' to 'unsigned int', possible loss of data
   Keyboard Tutorial System.vcxproj -> C:\Users\Alzer\source\repos\KeyboardTutorialSystem\x64\Debug\Keyboard Tutorial System.exe
