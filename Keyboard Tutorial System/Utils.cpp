@@ -18,6 +18,9 @@ void rescan::ThreadSafePop(std::deque<unsigned char*>& buffers)
 float rescan::PixelsToDIP(float pixels) noexcept
 {
 	UINT dpi = GetDpiForSystem();
+	//std::wstringstream wss;
+	//wss << L"System dpi: " << dpi << std::endl;
+	//OutputDebugString(wss.str().c_str());
 	return pixels * 96.f / dpi;
 }
 

@@ -191,9 +191,6 @@ rescan::GameMenuScene::GameMenuScene(Rect frame, Graphics2D* graphics, Keyboard*
 	float ratioX = ((float)rect.right - (float)rect.left) / (float)1920;
 	float ratioY = ((float)rect.bottom - (float)rect.top) / (float)1080;
 
-	std::wstringstream wss;
-	wss << ratioX << L" " << ratioY;
-	OutputDebugString(wss.str().c_str());
 	// Draw the arrows.
 	ID2D1GeometrySink* pSink = nullptr;
 	hr = pUpArrowPath->Open(&pSink);

@@ -92,6 +92,13 @@ void rescan::MainMenuScene::Draw()
 	RECT rc;
 	GetClientRect(pGraphics->GetWindow(), &rc);
 
+	//std::wstringstream wss;
+	//wss << L"Left: " << rc.left
+		//<< L" Top: " << rc.top
+		//<< L" Right: " << rc.right
+		//<< L" Bottom: " << rc.bottom << std::endl;
+	//OutputDebugString(wss.str().c_str());
+
 	D2D1_RECT_F upperRect = {
 		0.f,
 		0.f,

@@ -16,6 +16,8 @@ HINSTANCE rescan::Window::WindowClass::GetInstance() noexcept
 rescan::Window::WindowClass::WindowClass() :
 	hInstance(GetModuleHandle(NULL))
 {
+	//SetProcessDpiAwarenessContext(DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2);
+
 	WNDCLASSEX wcx = { 0 };
 	wcx.style = CS_HREDRAW | CS_VREDRAW | CS_OWNDC;
 	wcx.lpfnWndProc = HandleMessageSetup;
@@ -35,7 +37,6 @@ rescan::Window::WindowClass::WindowClass() :
 		WND_LAST_EXCEPT();
 	}
 
-	SetProcessDPIAware();
 	CoInitialize(NULL);
 }
 
