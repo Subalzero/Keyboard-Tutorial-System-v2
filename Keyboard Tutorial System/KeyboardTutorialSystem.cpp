@@ -6,9 +6,7 @@ rescan::KeyboardTutorialSystem::KeyboardTutorialSystem(const std::wstring& comma
 	focusedScene(nullptr)
 {
 	tts = new TextToSpeech(SPCAT_VOICES_ONECORE, 1);
-	int cx = GetSystemMetrics(SM_CXSCREEN);
-	int cy = GetSystemMetrics(SM_CYSCREEN);
-	SetWindowPos(wnd.Gfx()->GetWindow(), NULL, 0, 0, cx, cy, NULL);
+
 	RECT rc;
 	GetClientRect(wnd.Gfx()->GetWindow(), &rc);
 	Rect rect;

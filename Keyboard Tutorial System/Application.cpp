@@ -3,7 +3,7 @@
 
 rescan::Application::Application(const std::wstring& commandLine) :
 	commandLine(commandLine),
-	wnd(1920, 1080, L"Keyboard Tutorial")
+	wnd(GetSystemMetrics(SM_CXSCREEN), GetSystemMetrics(SM_CYSCREEN), L"Keyboard Tutorial")
 {
 }
 
