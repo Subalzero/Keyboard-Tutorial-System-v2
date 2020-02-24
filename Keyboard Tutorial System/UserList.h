@@ -27,11 +27,14 @@ namespace rescan
 	public:
 		UserList();
 		~UserList();
-		void AddEmptyUser();
-		void AddUserScore(BestScore score, int userID);
+		void AddEmptyUser(std::wstring username);
+		void AddUserScore(BestScore score, int userID, int lesson);
 		void RemoveUser(int userID);
 	private:
+		void writeToFile();
+		void readFromFile();
+	private:
+		static int currID;
 		std::vector<User> users;
-		std::wfstream wFileStream;
 	};
 }
