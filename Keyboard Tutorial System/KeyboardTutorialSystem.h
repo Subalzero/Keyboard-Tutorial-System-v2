@@ -13,8 +13,8 @@
 #include "QuitMessageScene.h"
 #include "MainMenuScene.h"
 #include "UserListScene.h"
-
-#define LESSON(i) lesson##i
+#include "NewUserScene.h"
+#include "UserList.h"
 
 namespace rescan
 {
@@ -86,9 +86,13 @@ namespace rescan
 
 		std::unique_ptr<UserListScene> userListScene;
 
+		std::unique_ptr<NewUserScene> newUserScene;
+
 		std::vector<ILesson*> lessonList;
 
 		std::vector<Scene*> scenes;
+
+		UserList userList;
 	};
 }
 

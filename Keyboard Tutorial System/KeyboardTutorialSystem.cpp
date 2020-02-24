@@ -119,9 +119,12 @@ rescan::KeyboardTutorialSystem::KeyboardTutorialSystem(const std::wstring& comma
 	userListScene = std::make_unique<UserListScene>(rect, wnd.Gfx(), tts, &wnd.kbd);
 	userListScene->callback = this;
 
+	newUserScene = std::make_unique<NewUserScene>(rect, wnd.Gfx(), &wnd.kbd, tts);
+	newUserScene->callback = this;
+
 	focusedScene = mainMenuScene.get();
-	mainMenuScene->Begin();
-	scenes.push_back(mainMenuScene.get());
+	focusedScene->Begin();
+	scenes.push_back(focusedScene);
 }
 
 rescan::KeyboardTutorialSystem::~KeyboardTutorialSystem()
@@ -209,6 +212,23 @@ void rescan::KeyboardTutorialSystem::SceneHasEnded(Scene* scene, void* context)
 	else if (UserListScene * sc = dynamic_cast<UserListScene*>(scene))
 	{
 		UserListScene::UserListSceneContext* cont = reinterpret_cast<UserListScene::UserListSceneContext*>(context);
+		if (cont->isExit)
+		{
+			scenes.pop_back();
+			focusedScene = scenes.back();
+			focusedScene->Begin();
+			return;
+		}
+		else if (cont->willAddUser)
+		{
+			focusedScene = newUserScene.get();
+			focusedScene->Begin();
+			scenes.push_back(focusedScene);
+		}
+	}
+	else if (NewUserScene * sc = dynamic_cast<NewUserScene*>(scene))
+	{
+		NewUserScene::NewUserSceneContext* cont = reinterpret_cast<NewUserScene::NewUserSceneContext*>(context);
 		if (cont->isExit)
 		{
 			scenes.pop_back();
