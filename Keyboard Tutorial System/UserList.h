@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 #include <fstream>
+#include <optional>
 
 namespace rescan
 {
@@ -27,14 +28,19 @@ namespace rescan
 	public:
 		UserList();
 		~UserList();
-		void AddEmptyUser(std::wstring username);
+		bool AddEmptyUser(std::wstring username);
 		void AddUserScore(BestScore score, int userID, int lesson);
+		std::optional<User> getUser(int userID);
 		void RemoveUser(int userID);
+		int Find(std::wstring userName) const;
+		User& operator[] (unsigned index);
+	public:
+		std::vector<User> users;
 	private:
 		void writeToFile();
 		void readFromFile();
 	private:
 		static int currID;
-		std::vector<User> users;
+		
 	};
 }

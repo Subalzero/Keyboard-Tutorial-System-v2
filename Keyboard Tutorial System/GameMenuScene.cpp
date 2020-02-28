@@ -491,6 +491,11 @@ void rescan::GameMenuScene::Down()
 		selected = 0;
 }
 
+void rescan::GameMenuScene::SetUser(User user)
+{
+	this->user = user;
+}
+
 unsigned int rescan::GameMenuScene::GetSelected()
 {
 	return selected;
@@ -528,6 +533,17 @@ void rescan::GameMenuScene::KeyboardEvents(const Keyboard::Event& ev)
 			GameMenuSceneContext context;
 			context.selectedLesson = selected;
 			context.isExit = false;
+			context.user = user;
+			if (callback)
+				callback->SceneHasEnded(this, &context);
+			break;
+		}
+		case VK_DELETE:
+		{
+			GameMenuSceneContext context;
+			context.willDeleteUser = true;
+			context.isExit = false;
+			context.user = user;
 			if (callback)
 				callback->SceneHasEnded(this, &context);
 			break;

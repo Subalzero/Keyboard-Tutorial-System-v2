@@ -12,8 +12,12 @@ rescan::UserList::~UserList()
 {
 }
 
-void rescan::UserList::AddEmptyUser(std::wstring username)
+bool rescan::UserList::AddEmptyUser(std::wstring username)
 {
+	if (Find(username) != -1)
+	{
+		return false;
+	}
 	User user;
 	user.userName = username;
 	user.lessonLevel = 0;
@@ -24,7 +28,9 @@ void rescan::UserList::AddEmptyUser(std::wstring username)
 	std::wstringstream wss;
 	wss << user.userID << user.userName << L".dat";
 	user.fileLocation = wss.str();
+	users.push_back(user);
 	writeToFile();
+	return true;
 }
 
 void rescan::UserList::AddUserScore(BestScore score, int userID, int lesson)
@@ -40,17 +46,50 @@ void rescan::UserList::AddUserScore(BestScore score, int userID, int lesson)
 	writeToFile();
 }
 
+std::optional<rescan::User> rescan::UserList::getUser(int userID)
+{
+	for (auto iter = users.begin(); iter != users.end(); ++iter)
+	{
+		if ((*iter).userID == userID)
+		{
+			return (*iter);
+		}
+	}
+	return {};
+}
+
 void rescan::UserList::RemoveUser(int userID)
 {
 	for (auto iter = users.begin(); iter != users.end(); ++iter)
 	{
 		if ((*iter).userID == userID)
 		{
+			_wremove((*iter).fileLocation.c_str());
 			users.erase(iter);
 			break;
 		}
 	}
 	writeToFile();
+}
+
+int rescan::UserList::Find(std::wstring userName) const
+{
+	int index = -1;
+	for (int i = 0; i < users.size(); ++i)
+	{
+		User user = users[i];
+		if (user.userName == userName)
+		{
+			index = i;
+			break;
+		}
+	}
+	return index;
+}
+
+rescan::User& rescan::UserList::operator[](unsigned index)
+{
+	return users[index];
 }
 
 void rescan::UserList::writeToFile()

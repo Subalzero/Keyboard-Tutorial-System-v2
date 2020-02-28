@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include "UserListScene.h"
 
-rescan::UserListScene::UserListScene(Rect rect, Graphics2D* gfx, TextToSpeech* tts, Keyboard* kbd) :
-	Scene(rect, gfx), tts(tts), kbd(kbd)
+rescan::UserListScene::UserListScene(Rect rect, Graphics2D* gfx, TextToSpeech* tts, Keyboard* kbd, UserList* userList) :
+	Scene(rect, gfx), tts(tts), kbd(kbd), userList(userList)
 {
 	HRESULT hr;
 
@@ -47,20 +47,22 @@ rescan::UserListScene::~UserListScene()
 void rescan::UserListScene::Draw()
 {
 	float addHeight = 75.f;
+	RECT rect;
+	GetClientRect(pGraphics->GetWindow(), &rect);
 	D2D1_RECT_F textRect = {
 		0.f,
 		0.f,
-		400.f,
+		PixelsToDIP(rect.right),
 		75.f
 	};
 
-	for (size_t i = 0; i < options.size(); ++i)
+	for (size_t i = 0; i < userList->users.size(); ++i)
 	{
 		if (i == selected)
 		{
 			pGraphics->GetRenderTarget()->DrawTextW(
-				options[i].c_str(),
-				options[i].length(),
+				userList->users[i].userName.c_str(),
+				userList->users[i].userName.length(),
 				pTextFormat,
 				textRect,
 				pSelectedTextBrush
@@ -69,8 +71,8 @@ void rescan::UserListScene::Draw()
 		else
 		{
 			pGraphics->GetRenderTarget()->DrawTextW(
-				options[i].c_str(),
-				options[i].length(),
+				userList->users[i].userName.c_str(),
+				userList->users[i].userName.length(),
 				pTextFormat,
 				textRect,
 				pTextBrush
@@ -80,7 +82,7 @@ void rescan::UserListScene::Draw()
 		textRect.bottom += addHeight;
 	}
 
-	if (selected == options.size())
+	if (selected == userList->users.size())
 	{
 		pGraphics->GetRenderTarget()->DrawTextW(
 			L"Add user",
@@ -130,8 +132,10 @@ void rescan::UserListScene::KeyboardEvents(const Keyboard::Event& ev)
 		{
 			UserListSceneContext call = { 0 };
 			call.selected = selected;
-			if (selected == options.size())
+			if (selected == userList->users.size())
 				call.willAddUser = true;
+			else if (selected < userList->users.size())
+				call.user = userList->users[selected];
 			if (callback)
 				callback->SceneHasEnded(this, &call);
 			break;
@@ -142,41 +146,41 @@ void rescan::UserListScene::KeyboardEvents(const Keyboard::Event& ev)
 
 void rescan::UserListScene::Up()
 {
-	if (--selected > options.size())
-		selected = options.size();
-	if (selected == options.size())
+	if (--selected > userList->users.size())
+		selected = userList->users.size();
+	if (selected == userList->users.size())
 	{
 		tts->speak(L"Add User", TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
 	}
 	else
 	{
-		tts->speak(options[selected].c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
+		tts->speak(userList->users[selected].userName.c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
 	}
 }
 
 void rescan::UserListScene::Down()
 {
-	if (++selected > options.size())
+	if (++selected > userList->users.size())
 		selected = 0;
-	if (selected == options.size())
+	if (selected == userList->users.size())
 	{
 		tts->speak(L"Add User", TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
 	}
 	else
 	{
-		tts->speak(options[selected].c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
+		tts->speak(userList->users[selected].userName.c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
 	}
 }
 
 void rescan::UserListScene::Begin()
 {
 	selected = 0;
-	if (selected == options.size())
+	if (selected == userList->users.size())
 	{
 		tts->speak(L"Add User", TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
 	}
 	else
 	{
-		tts->speak(options[selected].c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
+		tts->speak(userList->users[selected].userName.c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
 	}
 }

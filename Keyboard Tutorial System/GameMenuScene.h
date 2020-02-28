@@ -4,6 +4,7 @@
 #include "Graphics2D.h"
 #include "Keyboard.h"
 #include "TextToSpeech.h"
+#include "UserList.h"
 
 namespace rescan
 {
@@ -13,7 +14,9 @@ namespace rescan
 		struct GameMenuSceneContext
 		{
 			bool isExit;
+			bool willDeleteUser;
 			unsigned int selectedLesson;
+			User user;
 		};
 		GameMenuScene(Rect frame, Graphics2D* graphics, Keyboard* kbd, TextToSpeech* tts);
 		~GameMenuScene();
@@ -23,6 +26,7 @@ namespace rescan
 		void End() override;
 		void Up();
 		void Down();
+		void SetUser(User user);
 		unsigned int GetSelected();
 		void KeyboardEvents(const Keyboard::Event& ev) override;
 		std::wstring GetSelectedString();
@@ -47,6 +51,8 @@ namespace rescan
 
 		std::vector<std::wstring> lessonList;
 		unsigned int selected;
+
+		User user;
 	};
 }
 

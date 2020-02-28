@@ -7,7 +7,6 @@ rescan::TextToSpeech::TextToSpeech(const wchar_t* source, unsigned voiceToken) :
 	m_prevFlags(TTSFLAGS_DEFAULT)
 {
 	HRESULT hr;
-	CoInitialize(NULL);
 	try
 	{
 		hr = m_format.AssignFormat(SPSF_22kHz16BitMono);
@@ -46,6 +45,8 @@ rescan::TextToSpeech::TextToSpeech(const wchar_t* source, unsigned voiceToken) :
 		hr = m_cpXAudio2->CreateSourceVoice(&m_pSourceVoice, m_format.WaveFormatExPtr(), 0, XAUDIO2_DEFAULT_FREQ_RATIO, &m_callback);
 		if (FAILED(hr))
 			throw std::runtime_error("Rescan Text-to-Speech Error: Error creating source voice.");
+
+		m_cpVoice->SetRate(-1);
 	}
 	catch (std::exception& e)
 	{

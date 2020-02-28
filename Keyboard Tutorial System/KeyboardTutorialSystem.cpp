@@ -116,11 +116,14 @@ rescan::KeyboardTutorialSystem::KeyboardTutorialSystem(const std::wstring& comma
 	mainMenuScene = std::make_unique<MainMenuScene>(rect, wnd.Gfx(), tts, &wnd.kbd);
 	mainMenuScene->callback = this;
 
-	userListScene = std::make_unique<UserListScene>(rect, wnd.Gfx(), tts, &wnd.kbd);
+	userListScene = std::make_unique<UserListScene>(rect, wnd.Gfx(), tts, &wnd.kbd, &userList);
 	userListScene->callback = this;
 
 	newUserScene = std::make_unique<NewUserScene>(rect, wnd.Gfx(), &wnd.kbd, tts);
 	newUserScene->callback = this;
+
+	deleteUserScene = std::make_unique<DeleteUserScene>(rect, wnd.Gfx(), tts);
+	deleteUserScene->callback = this;
 
 	focusedScene = mainMenuScene.get();
 	focusedScene->Begin();
@@ -199,7 +202,7 @@ void rescan::KeyboardTutorialSystem::SceneHasEnded(Scene* scene, void* context)
 		}
 		if (cont->index == 0)
 		{
-			focusedScene = menuScene;
+			focusedScene = userListScene.get();
 			focusedScene->Begin();
 			scenes.push_back(focusedScene);
 		}
@@ -225,6 +228,13 @@ void rescan::KeyboardTutorialSystem::SceneHasEnded(Scene* scene, void* context)
 			focusedScene->Begin();
 			scenes.push_back(focusedScene);
 		}
+		else
+		{
+			menuScene->SetUser(cont->user);
+			focusedScene = menuScene;
+			focusedScene->Begin();
+			scenes.push_back(focusedScene);
+		}
 	}
 	else if (NewUserScene * sc = dynamic_cast<NewUserScene*>(scene))
 	{
@@ -235,6 +245,18 @@ void rescan::KeyboardTutorialSystem::SceneHasEnded(Scene* scene, void* context)
 			focusedScene = scenes.back();
 			focusedScene->Begin();
 			return;
+		}
+		else
+		{
+			bool hasNotUser = userList.AddEmptyUser(cont->userName);
+			if (hasNotUser)
+			{
+				scenes.pop_back();
+				focusedScene = scenes.back();
+				focusedScene->Begin();
+			}
+			else
+				tts->speak(L"User already exists. Please try a different username.", TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
 		}
 	}
 	else if (GameMenuScene * sc = dynamic_cast<GameMenuScene*>(scene))
@@ -247,10 +269,32 @@ void rescan::KeyboardTutorialSystem::SceneHasEnded(Scene* scene, void* context)
 			focusedScene->Begin();
 			return;
 		}
+		else if (cont->willDeleteUser)
+		{
+			deleteUserScene->SetUser(cont->user);
+			focusedScene = deleteUserScene.get();
+			focusedScene->Begin();
+			return;
+		}
 		ILesson* lesson = lessonList[cont->selectedLesson];
 		scenes.push_back(lesson);
 		lesson->Begin();
 		focusedScene = lesson;
+	}
+	else if (DeleteUserScene * sc = dynamic_cast<DeleteUserScene*>(scene))
+	{
+		DeleteUserScene::DeleteUserSceneContext* cont = reinterpret_cast<DeleteUserScene::DeleteUserSceneContext*>(context);
+		if (cont->returnType == DeleteUserScene::Type::DeleteUserScene_OK)
+		{
+			userList.RemoveUser(cont->user.userID);
+			scenes.pop_back();
+			focusedScene = scenes.back();
+			focusedScene->Begin();
+		}
+		else
+		{
+			focusedScene = scenes.back();
+		}
 	}
 	else if (ILesson * sc = dynamic_cast<ILesson*>(scene))
 	{

@@ -2,6 +2,7 @@
 
 #include "Scene.h"
 #include "TextToSpeech.h"
+#include "UserList.h"
 
 namespace rescan
 {
@@ -13,8 +14,9 @@ namespace rescan
 			unsigned selected;
 			bool willAddUser;
 			bool isExit;
+			User user;
 		};
-		UserListScene(Rect rect, Graphics2D* gfx, TextToSpeech* tts, Keyboard* kbd);
+		UserListScene(Rect rect, Graphics2D* gfx, TextToSpeech* tts, Keyboard* kbd, UserList* userList);
 		virtual ~UserListScene();
 		void Draw() override;
 		void Update(double deltaTime) override;
@@ -33,6 +35,8 @@ namespace rescan
 		std::vector<std::wstring> options;
 
 		unsigned int selected = 0;
+
+		UserList* userList;
 	};
 }
 
