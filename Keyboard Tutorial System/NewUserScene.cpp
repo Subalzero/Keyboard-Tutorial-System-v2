@@ -212,12 +212,43 @@ void rescan::NewUserScene::KeyboardEvents(const Keyboard::Event& ev)
 		}
 		case VK_BACK:
 		{
-			if (textFieldChars.size() > 0)
+			if (textFieldChars.size() > 0 && selectedChar > 0)
 			{
-				textFieldChars.pop_back();
-				auto rIter = textFieldChars.rbegin();
-				if (rIter != textFieldChars.rend())
-					SpeakChar(*rIter);
+				auto iter = textFieldChars.begin();
+				std::advance(iter, selectedChar - 1);
+				auto temp = iter;
+				if (temp != textFieldChars.begin())
+				{
+					--temp;
+					SpeakChar(*temp);
+				}
+				textFieldChars.erase(iter);
+
+				--selectedChar;
+			}
+			return;
+		}
+		case VK_RIGHT:
+		{
+			if (selectedChar < textFieldChars.size())
+			{
+				auto iter = textFieldChars.begin();
+				std::advance(iter, selectedChar);
+				SpeakChar(*iter);
+				++selectedChar;
+			}
+			return;
+		}
+		case VK_LEFT:
+		{
+			if (selectedChar > 0)
+			{
+				auto iter = textFieldChars.begin();
+				if (selectedChar - 2 < textFieldChars.size())
+				{
+					std::advance(iter, selectedChar - 2);
+					SpeakChar(*iter);
+				}
 				--selectedChar;
 			}
 			return;
@@ -245,6 +276,7 @@ void rescan::NewUserScene::Begin()
 	kbd->FlushChar();
 	kbd->EnableAutorepeat();
 	selectedChar = 0;
+	textFieldChars = std::list<wchar_t>();
 	tts->speak(L"Enter new username.", TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
 }
 
