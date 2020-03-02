@@ -35,7 +35,7 @@ bool rescan::UserList::AddEmptyUser(std::wstring username)
 
 void rescan::UserList::AddUserScore(BestScore score, int userID, int lesson)
 {
-	for (User user : users)
+	for (User& user : users)
 	{
 		if (user.userID == userID)
 		{

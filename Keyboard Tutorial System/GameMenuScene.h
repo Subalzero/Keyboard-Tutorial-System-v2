@@ -27,6 +27,7 @@ namespace rescan
 		void Up();
 		void Down();
 		void SetUser(User user);
+		User GetUser();
 		unsigned int GetSelected();
 		void KeyboardEvents(const Keyboard::Event& ev) override;
 		std::wstring GetSelectedString();

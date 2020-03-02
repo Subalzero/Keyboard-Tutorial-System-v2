@@ -310,6 +310,11 @@ void rescan::KeyboardTutorialSystem::SceneHasEnded(Scene* scene, void* context)
 			scenes.pop_back();
 			double accuracy = (double(cont->totalChars) - double(cont->errors)) / double(cont->totalChars) * 100.f;
 			scoreScene->SetScore(cont->totalTime, cont->wordsPerMinute, accuracy);
+			BestScore score = { 0 };
+			score.parTime = cont->totalTime;
+			score.wordsPerMinute = cont->wordsPerMinute;
+			score.accuracy = accuracy;
+			userList.AddUserScore(score, menuScene->GetUser().userID, cont->lesson);
 			scoreScene->Begin();
 			scenes.push_back(scoreScene.get());
 			focusedScene = scoreScene.get();
