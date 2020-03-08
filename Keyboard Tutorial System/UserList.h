@@ -20,7 +20,8 @@ namespace rescan
 		int userID;
 		std::wstring fileLocation;
 		int lessonLevel;
-		BestScore scores[43];
+		int moduleLevel;
+		std::optional<BestScore> scores[41];
 	};
 
 	class UserList

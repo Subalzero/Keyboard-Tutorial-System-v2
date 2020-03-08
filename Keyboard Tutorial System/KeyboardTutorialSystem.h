@@ -16,6 +16,7 @@
 #include "NewUserScene.h"
 #include "UserList.h"
 #include "DeleteUserScene.h"
+#include "DashboardScene.h"
 
 namespace rescan
 {
@@ -85,6 +86,7 @@ namespace rescan
 		std::unique_ptr<UserListScene> userListScene;
 		std::unique_ptr<NewUserScene> newUserScene;
 		std::unique_ptr<DeleteUserScene> deleteUserScene;
+		std::unique_ptr<DashboardScene> dashboardScene;
 
 		std::vector<ILesson*> lessonList;
 		std::vector<Scene*> scenes;

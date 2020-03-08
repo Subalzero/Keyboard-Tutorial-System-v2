@@ -98,6 +98,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
     </Link>
     <Manifest>
       <AdditionalManifestFiles>DPIAwareness.manifest %(AdditionalManifestFiles)</AdditionalManifestFiles>
@@ -145,6 +146,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="DashboardScene.cpp" />
     <ClCompile Include="DeleteUserScene.cpp" />
     <ClCompile Include="Drawable.cpp" />
     <ClCompile Include="Exception.cpp" />
@@ -182,6 +184,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
+    <ClInclude Include="DashboardScene.h" />
     <ClInclude Include="DeleteUserScene.h" />
     <ClInclude Include="Drawable.h" />
     <ClInclude Include="Exception.h" />
@@ -221,72 +224,6 @@
     <Image Include="Resources\Images\icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Resources\Texts\21. The B Key.txt" />
-    <Text Include="Resources\Texts\22. The Quotation Mark.txt" />
-    <Text Include="Resources\Texts\23. The Q Key.txt" />
-    <Text Include="Resources\Texts\24. The Colon Key.txt" />
-    <Text Include="Resources\Texts\25. The P Key.txt" />
-    <Text Include="Resources\Texts\26. The X Key.txt" />
-    <Text Include="Resources\Texts\27. The Z Key.txt" />
-    <Text Include="Resources\Texts\28. Left Hand Number Row.txt" />
-    <Text Include="Resources\Texts\29. Right Hand Number Row.txt" />
-    <Text Include="Resources\Texts\30. The Intire Number Row.txt" />
-    <Text Include="Resources\Texts\Lesson 11 - The V Key.txt" />
-    <Text Include="Resources\Texts\Lesson 12 - The W Key.txt" />
-    <Text Include="Resources\Texts\Lesson 13 - The O Key.txt" />
-    <Text Include="Resources\Texts\Lesson 14 - Capital Letters.txt" />
-    <Text Include="Resources\Texts\Lesson 15 - C and Comma.txt" />
-    <Text Include="Resources\Texts\Lesson 16 - T and Period.txt" />
-    <Text Include="Resources\Texts\Lesson 17 - Question Mark.txt" />
-    <Text Include="Resources\Texts\Lesson 18 - The M Key.txt" />
-    <Text Include="Resources\Texts\Lesson 19 - The Y Key.txt" />
-    <Text Include="Resources\Texts\Lesson 20 - Apostrophe.txt" />
-    <Text Include="Resources\Texts\lesson 31 Exclamation mark and %40 symbol.txt" />
-    <Text Include="Resources\Texts\lesson1-The Right hand.txt" />
-    <Text Include="Resources\Texts\lesson10- The N Key.txt" />
-    <Text Include="Resources\Texts\lesson11- The V Key.txt" />
-    <Text Include="Resources\Texts\lesson12- The W Key.txt" />
-    <Text Include="Resources\Texts\lesson13- The O Key.txt" />
-    <Text Include="Resources\Texts\lesson14 - Capital Letters.txt" />
-    <Text Include="Resources\Texts\lesson15- C and Comma.txt" />
-    <Text Include="Resources\Texts\lesson16 - T and Period.txt" />
-    <Text Include="Resources\Texts\lesson17- Question Mark.txt" />
-    <Text Include="Resources\Texts\lesson18- The M Key.txt" />
-    <Text Include="Resources\Texts\lesson19- The Y Key.txt" />
-    <Text Include="Resources\Texts\lesson2- The left hand.txt" />
-    <Text Include="Resources\Texts\lesson20- Apostrophe.txt" />
-    <Text Include="Resources\Texts\lesson21- The B Key.txt" />
-    <Text Include="Resources\Texts\lesson22- The Quotation Mark.txt" />
-    <Text Include="Resources\Texts\lesson23- The Q Key.txt" />
-    <Text Include="Resources\Texts\lesson24- The Colon Key.txt" />
-    <Text Include="Resources\Texts\lesson25- The P Key.txt" />
-    <Text Include="Resources\Texts\lesson26- The X Key.txt" />
-    <Text Include="Resources\Texts\lesson27- The Z Key.txt" />
-    <Text Include="Resources\Texts\lesson28- Left Hand Number Row.txt" />
-    <Text Include="Resources\Texts\lesson29- Right Hand Number Row.txt" />
-    <Text Include="Resources\Texts\lesson3- The home row.txt" />
-    <Text Include="Resources\Texts\lesson30- The Intire Number Row.txt" />
-    <Text Include="Resources\Texts\lesson31- Exclamation mark and %40 symbol.txt" />
-    <Text Include="Resources\Texts\lesson32- Number and dollar sign.txt" />
-    <Text Include="Resources\Texts\lesson33- percent and caret.txt" />
-    <Text Include="Resources\Texts\lesson34- Ampersand and asterisk.txt" />
-    <Text Include="Resources\Texts\lesson35- left and right parenthesis.txt" />
-    <Text Include="Resources\Texts\lesson36- Underscore and hyphen.txt" />
-    <Text Include="Resources\Texts\lesson37- equal and plus.txt" />
-    <Text Include="Resources\Texts\lesson38- square and brackets.txt" />
-    <Text Include="Resources\Texts\lesson39- curly brackets.txt" />
-    <Text Include="Resources\Texts\lesson4- The I Key.txt" />
-    <Text Include="Resources\Texts\lesson40- less than and greater than.txt" />
-    <Text Include="Resources\Texts\lesson41- forward slash and backslash.txt" />
-    <Text Include="Resources\Texts\lesson42- tilde and grave accent.txt" />
-    <Text Include="Resources\Texts\lesson43- Numpad.txt" />
-    <Text Include="Resources\Texts\lesson5- The E key.txt" />
-    <Text Include="Resources\Texts\lesson6- The H Key.txt" />
-    <Text Include="Resources\Texts\lesson7- The G Key.txt" />
-    <Text Include="Resources\Texts\lesson8- The R Key.txt" />
-    <Text Include="Resources\Texts\lesson9- The U Key.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <Media Include="Resources\Audio\check.wav" />
     <Media Include="Resources\Audio\complete.wav" />
     <Media Include="Resources\Audio\select.wav" />
@@ -294,6 +231,30 @@
   </ItemGroup>
   <ItemGroup>
     <Manifest Include="DPIAwareness.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Resources\Texts\1. introduction\introduction 1 - arrows and enter.txt" />
+    <Text Include="Resources\Texts\1. introduction\introduction 2 - control and space.txt" />
+    <Text Include="Resources\Texts\1. introduction\introduction 3 - escape.txt" />
+    <Text Include="Resources\Texts\1. introduction\introduction 4 - F and J key.txt" />
+    <Text Include="Resources\Texts\1. introduction\introduction 5 - The home row.txt" />
+    <Text Include="Resources\Texts\1. introduction\introduction 6 - shift key.txt" />
+    <Text Include="Resources\Texts\2. left hand\lesson 1- The left hand home row keys.txt" />
+    <Text Include="Resources\Texts\2. left hand\lesson 10- The X Key.txt" />
+    <Text Include="Resources\Texts\2. left hand\lesson 11- The Z Key.txt" />
+    <Text Include="Resources\Texts\2. left hand\lesson 12- The B Key.txt" />
+    <Text Include="Resources\Texts\2. left hand\lesson 2 - The E key.txt" />
+    <Text Include="Resources\Texts\2. left hand\lesson 3 - The R Key.txt" />
+    <Text Include="Resources\Texts\2. left hand\lesson 4 - The T key.txt" />
+    <Text Include="Resources\Texts\2. left hand\lesson 5 - The W Key.txt" />
+    <Text Include="Resources\Texts\2. left hand\lesson 6 - The Q Key.txt" />
+    <Text Include="Resources\Texts\2. left hand\lesson 7- The G Key.txt" />
+    <Text Include="Resources\Texts\2. left hand\lesson 8 -The C key.txt" />
+    <Text Include="Resources\Texts\2. left hand\lesson 9- The V Key.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\images\text19.bin" />
+    <None Include="resources\images\text30.bin" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

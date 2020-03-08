@@ -1,0 +1,10 @@
+Hello, Good day! Today you will be learning the basic keys on how to use and navigate the keyboard tutorial.
+First is the arrow keys and enter key.
+The arrow keys up, down, left and right keys. They are used in navigating the lessons of the keyboard tutorial.
+press up key
+press down key
+press left key
+press right key
+next is the ENTER key
+ENTER key is used in entering new lessons.
+press ENTER key.

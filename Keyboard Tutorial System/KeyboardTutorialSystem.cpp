@@ -125,7 +125,10 @@ rescan::KeyboardTutorialSystem::KeyboardTutorialSystem(const std::wstring& comma
 	deleteUserScene = std::make_unique<DeleteUserScene>(rect, wnd.Gfx(), tts);
 	deleteUserScene->callback = this;
 
-	focusedScene = mainMenuScene.get();
+	dashboardScene = std::make_unique<DashboardScene>(rect, wnd.Gfx(), &wnd.kbd, tts);
+	dashboardScene->callback = this;
+
+	focusedScene = dashboardScene.get();
 	focusedScene->Begin();
 	scenes.push_back(focusedScene);
 }
