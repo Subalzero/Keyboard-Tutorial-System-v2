@@ -9,13 +9,13 @@ namespace rescan
 	class DashboardScene : public Scene
 	{
 	public:
-		struct DashBoardSceneContext
+		struct DashboardSceneContext
 		{
 			bool isExit;
 			bool willDeleteUser;
-			unsigned selectedLesson;
+			int selectedLesson;
 			unsigned selectedModule;
-			User iser;
+			User user;
 		};
 		DashboardScene(Rect rect, Graphics2D* gfx, Keyboard* kbd, TextToSpeech* tts);
 		~DashboardScene();
@@ -26,7 +26,7 @@ namespace rescan
 		void Down();
 		void Tab();
 		void SetUser(User user);
-		User GetUser();
+		User& GetUser();
 		unsigned GetSelected();
 		void KeyboardEvents(const Keyboard::Event& ev) override;
 		std::wstring GetSelectedString();
@@ -51,7 +51,7 @@ namespace rescan
 
 		unsigned selectedSideOption;
 		unsigned selectedModule;
-		unsigned selectedLessonInMod1;
+		int selectedLessonInMod1;
 		unsigned selectedLessonInMod2;
 		unsigned selectedLessonInMod3;
 		unsigned selectedLessonInMod4;

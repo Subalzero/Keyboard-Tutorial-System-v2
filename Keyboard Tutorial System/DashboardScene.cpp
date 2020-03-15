@@ -646,7 +646,7 @@ void rescan::DashboardScene::Up()
 			switch (selectedModule)
 			{
 			case 0:
-				if (selectedLessonInMod1 - 1 < module1Lessons.size())
+				if (selectedLessonInMod1 - 1 >= 0)
 				{
 					--selectedLessonInMod1;
 					wss << module1Lessons[selectedLessonInMod1];
@@ -759,11 +759,12 @@ void rescan::DashboardScene::Tab()
 
 void rescan::DashboardScene::SetUser(User user)
 {
+	this->user = user;
 }
 
-rescan::User rescan::DashboardScene::GetUser()
+rescan::User& rescan::DashboardScene::GetUser()
 {
-	return User();
+	return user;
 }
 
 unsigned rescan::DashboardScene::GetSelected()
@@ -826,6 +827,32 @@ void rescan::DashboardScene::KeyboardEvents(const Keyboard::Event& ev)
 					}
 					tts->speak((*list)[selected].c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
 				}
+				else if (!moduleIsRendering)
+				{
+					DashboardSceneContext cont = { 0 };
+					cont.selectedModule = selectedModule;
+					switch (selectedModule)
+					{
+					case 0:
+						cont.selectedLesson = -selectedLessonInMod1;
+						break;
+					case 1:
+						cont.selectedLesson = selectedLessonInMod2;
+						break;
+					case 2:
+						cont.selectedLesson = selectedLessonInMod3 + 12;
+						break;
+					case 3:
+						cont.selectedLesson = selectedLessonInMod4 + 23;
+						break;
+					case 4:
+						cont.selectedLesson = selectedLessonInMod5 + 27;
+						break;
+					}
+					cont.user = user;
+					if (callback)
+						callback->SceneHasEnded(this, &cont);
+				}
 			}
 			return;
 		}
@@ -837,8 +864,22 @@ void rescan::DashboardScene::KeyboardEvents(const Keyboard::Event& ev)
 				{
 					moduleIsRendering = !moduleIsRendering;
 					tts->speak(moduleNames[selectedModule].c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
+					return;
 				}
 			}
+			DashboardSceneContext cont = { 0 };
+			cont.isExit = true;
+			if (callback)
+				callback->SceneHasEnded(this, &cont);
+			return;
+		}
+		case VK_DELETE:
+		{
+			DashboardSceneContext cont = { 0 };
+			cont.willDeleteUser = true;
+			cont.user = user;
+			if (callback)
+				callback->SceneHasEnded(this, &cont);
 		}
 		}
 	}

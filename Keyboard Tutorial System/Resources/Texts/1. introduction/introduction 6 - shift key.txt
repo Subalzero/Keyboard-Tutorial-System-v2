@@ -1,4 +1,4 @@
-shift key is used to have capital letters and other alternate characters.
+shift key is used to have capital letters and other alternate characters. Press the shift key
 A
 S
 D

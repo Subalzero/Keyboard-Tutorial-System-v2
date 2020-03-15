@@ -16,6 +16,19 @@ a1A!
 s2S@
 s2S@
 A2S1
+!@!@
+!@!@
+S1S@
+D2D@
+S@d1
+;!;!
+l@l@
+;1L@
+g8!0
+@hi!
+!@l@
+!@!@
+A!S@
 Wow!
 This is crazy!
 Boo!
@@ -30,20 +43,7 @@ Emails  use @ in them.
 contact@amazon.com
 contact@ebay.com
 contact@whitehouse.gov
-!@!@
-!@!@
-S1S@
-D2D@
-S@d1
-;!;!
-l@l@
-;1L@
-g8!0
-@hi!
 We’re @ the mall!
 I’m @ the bank!
 A cat is @ the school!
 Wolves @ the gates.
-!@l@
-!@!@
-A!S@

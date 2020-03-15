@@ -19,6 +19,7 @@ namespace rescan
 			double wordsPerMinute;
 			bool isPaused;
 			bool isExit;
+			bool isTutorial;
 		};
 
 		ILesson(Rect rect, Graphics2D* graphics, Keyboard* kbd, Mouse* mouse, TextToSpeech* tts, int lesson);

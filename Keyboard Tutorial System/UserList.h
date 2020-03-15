@@ -12,6 +12,7 @@ namespace rescan
 		double parTime;
 		double wordsPerMinute;
 		double accuracy;
+		int frequency;
 	};
 
 	struct User
@@ -21,7 +22,7 @@ namespace rescan
 		std::wstring fileLocation;
 		int lessonLevel;
 		int moduleLevel;
-		std::optional<BestScore> scores[41];
+		BestScore scores[41];
 	};
 
 	class UserList

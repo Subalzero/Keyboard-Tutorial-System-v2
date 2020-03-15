@@ -21,7 +21,7 @@ bool rescan::UserList::AddEmptyUser(std::wstring username)
 	User user;
 	user.userName = username;
 	user.lessonLevel = 0;
-	for (int i = 0; i < 43; ++i) {
+	for (int i = 0; i < 41; ++i) {
 		user.scores[i] = { 0 };
 	}
 	user.userID = rescan::UserList::currID++;
@@ -108,11 +108,12 @@ void rescan::UserList::writeToFile()
 			std::wofstream fs(user.fileLocation);
 			if (fs.is_open())
 			{
-				for (int i = 0; i < 43; ++i)
+				for (int i = 0; i < 41; ++i)
 				{
 					fs << user.scores[i].parTime << std::endl;
 					fs << user.scores[i].wordsPerMinute << std::endl;
 					fs << user.scores[i].accuracy << std::endl;
+					fs << user.scores[i].frequency << std::endl;
 				}
 			}
 		}
@@ -139,11 +140,12 @@ void rescan::UserList::readFromFile()
 			std::wifstream fs(user.fileLocation);
 			if (fs.is_open())
 			{
-				for (int j = 0; j < 43; ++j)
+				for (int j = 0; j < 41; ++j)
 				{
 					fs >> user.scores[j].parTime;
 					fs >> user.scores[j].wordsPerMinute;
 					fs >> user.scores[j].accuracy;
+					fs >> user.scores[j].frequency;
 				}
 			}
 			users[i] = user;

@@ -114,6 +114,9 @@
     <ClCompile Include="DashboardScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="IntroLessons.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -215,6 +218,9 @@
     <ClInclude Include="DashboardScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="IntroLessons.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resource.rc">
@@ -264,6 +270,35 @@
     <Text Include="Resources\Texts\2. left hand\lesson 10- The X Key.txt" />
     <Text Include="Resources\Texts\2. left hand\lesson 11- The Z Key.txt" />
     <Text Include="Resources\Texts\2. left hand\lesson 12- The B Key.txt" />
+    <Text Include="Resources\Texts\3. right hand\lesson 13 -The Right hand.txt" />
+    <Text Include="Resources\Texts\3. right hand\lesson 14- The H Key.txt" />
+    <Text Include="Resources\Texts\3. right hand\lesson 15- The I Key.txt" />
+    <Text Include="Resources\Texts\3. right hand\lesson 16 - The U Key.txt" />
+    <Text Include="Resources\Texts\3. right hand\lesson 17 - The O Key.txt" />
+    <Text Include="Resources\Texts\3. right hand\lesson 18 - The P Key.txt" />
+    <Text Include="Resources\Texts\3. right hand\lesson 19- The Y Key.txt" />
+    <Text Include="Resources\Texts\3. right hand\lesson 20- The N Key.txt" />
+    <Text Include="Resources\Texts\3. right hand\lesson 21 - The M Key.txt" />
+    <Text Include="Resources\Texts\3. right hand\lesson 22 - The comma key.txt" />
+    <Text Include="Resources\Texts\3. right hand\lesson 23 -The period key.txt" />
+    <Text Include="Resources\Texts\4. num keys\lesson 24 - Left Hand Number Row.txt" />
+    <Text Include="Resources\Texts\4. num keys\lesson 25- Right Hand Number Row.txt" />
+    <Text Include="Resources\Texts\4. num keys\lesson 26 - The Intire Number Row.txt" />
+    <Text Include="Resources\Texts\4. num keys\lesson 27 - Numpad.txt" />
+    <Text Include="Resources\Texts\5. punctuation\lesson 28 - Exclamation mark and %40 symbol.txt" />
+    <Text Include="Resources\Texts\5. punctuation\lesson 29 - Number and dollar sign.txt" />
+    <Text Include="Resources\Texts\5. punctuation\lesson 30- percent and caret.txt" />
+    <Text Include="Resources\Texts\5. punctuation\lesson 31- Ampersand and asterisk.txt" />
+    <Text Include="Resources\Texts\5. punctuation\lesson 32- left and right parenthesis.txt" />
+    <Text Include="Resources\Texts\5. punctuation\lesson 33- Underscore and hyphen.txt" />
+    <Text Include="Resources\Texts\5. punctuation\lesson 34- equal and plus.txt" />
+    <Text Include="Resources\Texts\5. punctuation\lesson 35- square and brackets.txt" />
+    <Text Include="Resources\Texts\5. punctuation\lesson 36- curly brackets.txt" />
+    <Text Include="Resources\Texts\5. punctuation\lesson 37 - less than and greater than.txt" />
+    <Text Include="Resources\Texts\5. punctuation\lesson 38 - Question Mark.txt" />
+    <Text Include="Resources\Texts\5. punctuation\lesson 39 - Apostrophe.txt" />
+    <Text Include="Resources\Texts\5. punctuation\lesson 40 - The Quotation Mark.txt" />
+    <Text Include="Resources\Texts\5. punctuation\lesson 41 - The Colon Key.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\images\text19.bin">

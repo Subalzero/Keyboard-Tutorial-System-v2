@@ -29,12 +29,41 @@
 #define IDR_TEXT16                      188
 #define IDR_TEXT17                      189
 #define IDR_TEXT18                      190
+#define IDR_TEXT19                      191
+#define IDR_TEXT20                      192
+#define IDR_TEXT21                      193
+#define IDR_TEXT22                      194
+#define IDR_TEXT23                      195
+#define IDR_TEXT24                      196
+#define IDR_TEXT25                      197
+#define IDR_TEXT26                      198
+#define IDR_TEXT27                      199
+#define IDR_TEXT28                      200
+#define IDR_TEXT29                      201
+#define IDR_TEXT30                      202
+#define IDR_TEXT31                      203
+#define IDR_TEXT32                      204
+#define IDR_TEXT33                      205
+#define IDR_TEXT34                      206
+#define IDR_TEXT35                      207
+#define IDR_TEXT36                      208
+#define IDR_TEXT37                      209
+#define IDR_TEXT38                      210
+#define IDR_TEXT39                      211
+#define IDR_TEXT40                      212
+#define IDR_TEXT41                      213
+#define IDR_TEXT42                      214
+#define IDR_TEXT43                      215
+#define IDR_TEXT44                      216
+#define IDR_TEXT45                      217
+#define IDR_TEXT46                      218
+#define IDR_TEXT47                      219
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        191
+#define _APS_NEXT_RESOURCE_VALUE        220
 #define _APS_NEXT_COMMAND_VALUE         40002
 #define _APS_NEXT_CONTROL_VALUE         1001
 #define _APS_NEXT_SYMED_VALUE           101

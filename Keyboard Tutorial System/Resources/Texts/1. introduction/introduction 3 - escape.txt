@@ -1,2 +1,1 @@
-escape key is used to exit the lessons.
-press esc key
+escape key is used to exit the lessons. press esc key

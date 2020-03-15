@@ -1,6 +1,5 @@
-F and J keys is used to navigate the keyboard.
-place your left index finger to the F key and
-place your right index finger to the J key
+f
+j
 ff
 ff
 jj
