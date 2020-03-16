@@ -160,7 +160,7 @@ void rescan::ILesson::Update(double deltaTime)
 {
 	if (index >= itemList.size())
 		index = itemList.size() - 1;
-	if (lesson == 1 && index == 0 && IsCurrentItemComplete() && !done)
+	if (lesson == -4 && index == 0 && IsCurrentItemComplete() && !done)
 	{
 		tts->speak(L"Now press the space key to continue.", TTSFLAGS_ASYNC);
 		done = true;

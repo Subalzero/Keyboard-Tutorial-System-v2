@@ -14,7 +14,7 @@ void rescan::Lesson1::LoadLessons()
 {
 	const char* data;
 	DWORD size;
-	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT1), L"TEXT", &size, &data);
+	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT7), L"TEXT", &size, &data);
 	std::stringstream stream;
 	stream.write(data, size);
 	while (!stream.eof())
@@ -30,34 +30,9 @@ void rescan::Lesson1::LoadLessons()
 
 void rescan::Lesson1::SpeakCurrentItem()
 {
-	if (index == 0)
+	if (index >= 20)
 	{
-		tts->speak(
-			L"Put your right index finger to the J key and press it twice.",
-			TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK
-		);
-	}
-	else if (index == 2)
-	{
-		tts->speak(
-			L"Put your right middle finger to the K key and press it twice.",
-			TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK
-		);
-		
-	}
-	else if (index == 4)
-	{
-		tts->speak(
-			L"Put your right ring finger to the L key and press it twice.",
-			TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK
-		);
-	}
-	else if (index == 6)
-	{
-		tts->speak(
-			L"Put your right pinky finger to the semi-colon key and press it twice.",
-			TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK
-		);
+		tts->speak(itemList[index].c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
 	}
 	else
 	{
@@ -80,7 +55,7 @@ void rescan::Lesson2::LoadLessons()
 {
 	const char* data;
 	DWORD size;
-	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT2), L"TEXT", &size, &data);
+	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT8), L"TEXT", &size, &data);
 	std::stringstream stream;
 	stream.write(data, size);
 	while (!stream.eof())
@@ -96,35 +71,7 @@ void rescan::Lesson2::LoadLessons()
 
 void rescan::Lesson2::SpeakCurrentItem()
 {
-	if (index == 0)
-	{
-		tts->speak(
-			L"Put your left index finger to the F key and press it twice.",
-			TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK
-		);
-	}
-	else if (index == 2)
-	{
-		tts->speak(
-			L"Put your left middle finger to the D key and press it twice.",
-			TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK
-		);
-	}
-	else if (index == 4)
-	{
-		tts->speak(
-			L"Put your left ring finger to the S key and press it twice.",
-			TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK
-		);
-	}
-	else if (index == 6)
-	{
-		tts->speak(
-			L"Put your left pinky finger to the A key and press it twice.",
-			TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK
-		);
-	}
-	else if (index >= 20)
+	if (index >= 18)
 	{
 		tts->speak(itemList[index].c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
 	}
@@ -149,7 +96,7 @@ void rescan::Lesson3::LoadLessons()
 {
 	const char* data;
 	DWORD size;
-	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT3), L"TEXT", &size, &data);
+	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT9), L"TEXT", &size, &data);
 	std::stringstream stream;
 	stream.write(data, size);
 	while (!stream.eof())
@@ -165,7 +112,7 @@ void rescan::Lesson3::LoadLessons()
 
 void rescan::Lesson3::SpeakCurrentItem()
 {
-	if (index >= 19)
+	if (index >= 18)
 	{
 		tts->speak(itemList[index].c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
 	}
@@ -188,7 +135,7 @@ void rescan::Lesson4::LoadLessons()
 {
 	const char* data;
 	DWORD size;
-	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT4), L"TEXT", &size, &data);
+	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT10), L"TEXT", &size, &data);
 	std::stringstream stream;
 	stream.write(data, size);
 	while (!stream.eof())
@@ -204,11 +151,9 @@ void rescan::Lesson4::LoadLessons()
 
 void rescan::Lesson4::SpeakCurrentItem()
 {
-	if (index >= 21)
+	if (index >= 11)
 	{
 		std::wstring ws(itemList[index]);
-		if (index >= 38)
-			ws.append(L" semi-colon");
 		tts->speak(ws.c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
 	}
 	else
@@ -231,7 +176,7 @@ void rescan::Lesson5::LoadLessons()
 {
 	const char* data;
 	DWORD size;
-	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT5), L"TEXT", &size, &data);
+	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT11), L"TEXT", &size, &data);
 	std::stringstream stream;
 	stream.write(data, size);
 	while (!stream.eof())
@@ -247,7 +192,7 @@ void rescan::Lesson5::LoadLessons()
 
 void rescan::Lesson5::SpeakCurrentItem()
 {
-	if (index >= 20)
+	if (index >= 18)
 	{
 		tts->speak(itemList[index].c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
 	}
@@ -271,7 +216,7 @@ void rescan::Lesson6::LoadLessons()
 {
 	const char* data;
 	DWORD size;
-	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT6), L"TEXT", &size, &data);
+	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT12), L"TEXT", &size, &data);
 	std::stringstream stream;
 	stream.write(data, size);
 	while (!stream.eof())
@@ -310,7 +255,7 @@ void rescan::Lesson7::LoadLessons()
 {
 	const char* data;
 	DWORD size;
-	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT7), L"TEXT", &size, &data);
+	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT13), L"TEXT", &size, &data);
 	std::stringstream stream;
 	stream.write(data, size);
 	while (!stream.eof())
@@ -349,7 +294,7 @@ void rescan::Lesson8::LoadLessons()
 {
 	const char* data;
 	DWORD size;
-	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT8), L"TEXT", &size, &data);
+	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT14), L"TEXT", &size, &data);
 	std::stringstream stream;
 	stream.write(data, size);
 	while (!stream.eof())
@@ -365,7 +310,7 @@ void rescan::Lesson8::LoadLessons()
 
 void rescan::Lesson8::SpeakCurrentItem()
 {
-	if (index >= 18)
+	if (index == 9)
 	{
 		tts->speak(itemList[index].c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
 	}
@@ -388,7 +333,7 @@ void rescan::Lesson9::LoadLessons()
 {
 	const char* data;
 	DWORD size;
-	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT9), L"TEXT", &size, &data);
+	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT15), L"TEXT", &size, &data);
 	std::stringstream stream;
 	stream.write(data, size);
 	while (!stream.eof())
@@ -404,7 +349,7 @@ void rescan::Lesson9::LoadLessons()
 
 void rescan::Lesson9::SpeakCurrentItem()
 {
-	if (index >= 20)
+	if (index >= 19)
 	{
 		tts->speak(itemList[index].c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
 	}
@@ -427,7 +372,7 @@ void rescan::Lesson10::LoadLessons()
 {
 	const char* data;
 	DWORD size;
-	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT10), L"TEXT", &size, &data);
+	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT16), L"TEXT", &size, &data);
 	std::stringstream stream;
 	stream.write(data, size);
 	while (!stream.eof())

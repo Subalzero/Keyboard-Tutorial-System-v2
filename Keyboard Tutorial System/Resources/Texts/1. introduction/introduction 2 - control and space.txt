@@ -1,0 +1,2 @@
+ctrl key is used to repeat the letters of the lessons. press ctrl key
+space bar is used to continue after finishing the set of letters. press the space bar

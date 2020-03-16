@@ -8,7 +8,7 @@ rescan::Lesson41::Lesson41(Rect rect, Graphics2D* graphics, Keyboard* kbd, Mouse
 
 void rescan::Lesson41::SpeakCurrentItem()
 {
-	if (index >= 20)
+	if (index >= 19)
 	{
 		tts->speak(itemList[index].c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
 	}
@@ -22,7 +22,7 @@ void rescan::Lesson41::LoadLessons()
 {
 	const char* data;
 	DWORD size;
-	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT41), L"TEXT", &size, &data);
+	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT47), L"TEXT", &size, &data);
 	std::stringstream stream;
 	stream.write(data, size);
 	while (!stream.eof())

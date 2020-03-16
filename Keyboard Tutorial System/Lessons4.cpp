@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Lessons4.h"
+#include <regex>
 
 rescan::Lesson31::Lesson31(Rect rect, Graphics2D* graphics, Keyboard* kbd, Mouse* mouse, TextToSpeech* tts) :
 	ILesson(rect, graphics, kbd, mouse, tts, 31)
@@ -8,9 +9,11 @@ rescan::Lesson31::Lesson31(Rect rect, Graphics2D* graphics, Keyboard* kbd, Mouse
 
 void rescan::Lesson31::SpeakCurrentItem()
 {
-	if (index >= 18)
+	if (index >= 12)
 	{
-		tts->speak(itemList[index].c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
+		std::wstring ws;
+		ws = std::regex_replace(itemList[index], std::wregex(std::wstring(L"*")), std::wstring(L" Asterisk "));
+		tts->speak(ws.c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
 	}
 	else
 	{
@@ -22,7 +25,7 @@ void rescan::Lesson31::LoadLessons()
 {
 	const char* data;
 	DWORD size;
-	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT31), L"TEXT", &size, &data);
+	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT37), L"TEXT", &size, &data);
 	std::stringstream stream;
 	stream.write(data, size);
 	while (!stream.eof())
@@ -43,7 +46,7 @@ rescan::Lesson32::Lesson32(Rect rect, Graphics2D* graphics, Keyboard* kbd, Mouse
 
 void rescan::Lesson32::SpeakCurrentItem()
 {
-	if (index >= 16)
+	if (index >= 14)
 	{
 		tts->speak(itemList[index].c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
 	}
@@ -57,7 +60,7 @@ void rescan::Lesson32::LoadLessons()
 {
 	const char* data;
 	DWORD size;
-	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT32), L"TEXT", &size, &data);
+	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT38), L"TEXT", &size, &data);
 	std::stringstream stream;
 	stream.write(data, size);
 	while (!stream.eof())
@@ -92,7 +95,7 @@ void rescan::Lesson33::LoadLessons()
 {
 	const char* data;
 	DWORD size;
-	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT33), L"TEXT", &size, &data);
+	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT39), L"TEXT", &size, &data);
 	std::stringstream stream;
 	stream.write(data, size);
 	while (!stream.eof())
@@ -113,7 +116,7 @@ rescan::Lesson34::Lesson34(Rect rect, Graphics2D* graphics, Keyboard* kbd, Mouse
 
 void rescan::Lesson34::SpeakCurrentItem()
 {
-	if (index >= 12)
+	if (index >= 13)
 	{
 		tts->speak(itemList[index].c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
 	}
@@ -127,7 +130,7 @@ void rescan::Lesson34::LoadLessons()
 {
 	const char* data;
 	DWORD size;
-	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT34), L"TEXT", &size, &data);
+	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT40), L"TEXT", &size, &data);
 	std::stringstream stream;
 	stream.write(data, size);
 	while (!stream.eof())
@@ -148,7 +151,7 @@ rescan::Lesson35::Lesson35(Rect rect, Graphics2D* graphics, Keyboard* kbd, Mouse
 
 void rescan::Lesson35::SpeakCurrentItem()
 {
-	if (index >= 9)
+	if (index >= 18)
 	{
 		tts->speak(itemList[index].c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
 	}
@@ -162,7 +165,7 @@ void rescan::Lesson35::LoadLessons()
 {
 	const char* data;
 	DWORD size;
-	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT35), L"TEXT", &size, &data);
+	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT41), L"TEXT", &size, &data);
 	std::stringstream stream;
 	stream.write(data, size);
 	while (!stream.eof())
@@ -183,7 +186,7 @@ rescan::Lesson36::Lesson36(Rect rect, Graphics2D* graphics, Keyboard* kbd, Mouse
 
 void rescan::Lesson36::SpeakCurrentItem()
 {
-	if (index >= 20)
+	if (index >= 19)
 	{
 		tts->speak(itemList[index].c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
 	}
@@ -197,7 +200,7 @@ void rescan::Lesson36::LoadLessons()
 {
 	const char* data;
 	DWORD size;
-	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT36), L"TEXT", &size, &data);
+	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT42), L"TEXT", &size, &data);
 	std::stringstream stream;
 	stream.write(data, size);
 	while (!stream.eof())
@@ -218,6 +221,10 @@ rescan::Lesson37::Lesson37(Rect rect, Graphics2D* graphics, Keyboard* kbd, Mouse
 
 void rescan::Lesson37::SpeakCurrentItem()
 {
+	if (index >= 21)
+	{
+		tts->speak(itemList[index].c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
+	}
 	{
 		SayHint();
 	}
@@ -227,7 +234,7 @@ void rescan::Lesson37::LoadLessons()
 {
 	const char* data;
 	DWORD size;
-	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT37), L"TEXT", &size, &data);
+	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT43), L"TEXT", &size, &data);
 	std::stringstream stream;
 	stream.write(data, size);
 	while (!stream.eof())
@@ -248,7 +255,7 @@ rescan::Lesson38::Lesson38(Rect rect, Graphics2D* graphics, Keyboard* kbd, Mouse
 
 void rescan::Lesson38::SpeakCurrentItem()
 {
-	if (index >= 18)
+	if (index >= 17)
 	{
 		tts->speak(itemList[index].c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
 	}
@@ -262,7 +269,7 @@ void rescan::Lesson38::LoadLessons()
 {
 	const char* data;
 	DWORD size;
-	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT38), L"TEXT", &size, &data);
+	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT44), L"TEXT", &size, &data);
 	std::stringstream stream;
 	stream.write(data, size);
 	while (!stream.eof())
@@ -283,7 +290,7 @@ rescan::Lesson39::Lesson39(Rect rect, Graphics2D* graphics, Keyboard* kbd, Mouse
 
 void rescan::Lesson39::SpeakCurrentItem()
 {
-	if (index >= 19)
+	if (index >= 18)
 	{
 		tts->speak(itemList[index].c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
 	}
@@ -297,7 +304,7 @@ void rescan::Lesson39::LoadLessons()
 {
 	const char* data;
 	DWORD size;
-	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT39), L"TEXT", &size, &data);
+	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT45), L"TEXT", &size, &data);
 	std::stringstream stream;
 	stream.write(data, size);
 	while (!stream.eof())
@@ -318,7 +325,7 @@ rescan::Lesson40::Lesson40(Rect rect, Graphics2D* graphics, Keyboard* kbd, Mouse
 
 void rescan::Lesson40::SpeakCurrentItem()
 {
-	if (index >= 21)
+	if (index >= 20)
 	{
 		tts->speak(itemList[index].c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
 	}
@@ -332,7 +339,7 @@ void rescan::Lesson40::LoadLessons()
 {
 	const char* data;
 	DWORD size;
-	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT40), L"TEXT", &size, &data);
+	LoadFileInResource(MAKEINTRESOURCE(IDR_TEXT46), L"TEXT", &size, &data);
 	std::stringstream stream;
 	stream.write(data, size);
 	while (!stream.eof())
