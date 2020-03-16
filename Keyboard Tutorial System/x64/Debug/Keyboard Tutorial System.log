@@ -1,2 +1,23 @@
-﻿  KeyboardTutorialSystem.cpp
+﻿  DashboardScene.cpp
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(211,26): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(212,27): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(216,26): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(218,19): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(219,27): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(224,27): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(225,26): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(226,19): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(230,26): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(231,27): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(232,19): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(233,19): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(238,27): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(239,32): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(240,27): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(306,3): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(349,5): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(532,6): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(537,55): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(546,6): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(673,4): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
   Keyboard Tutorial System.vcxproj -> C:\Users\Alzer\source\repos\KeyboardTutorialSystem\x64\Debug\Keyboard Tutorial System.exe

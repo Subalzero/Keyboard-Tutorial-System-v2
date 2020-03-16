@@ -50,6 +50,14 @@ rescan::DashboardScene::DashboardScene(Rect rect, Graphics2D* gfx, Keyboard* kbd
 		throw WND_EXCEPT(hr);
 
 	hr = pGraphics->GetRenderTarget()->CreateSolidColorBrush(
+		D2D1::ColorF(0x718096),
+		&pGray600Brush
+	);
+
+	if (FAILED(hr))
+		throw WND_EXCEPT(hr);
+
+	hr = pGraphics->GetRenderTarget()->CreateSolidColorBrush(
 		D2D1::ColorF(0x2d3748),
 		&pGray800Brush
 	);
@@ -101,9 +109,24 @@ rescan::DashboardScene::DashboardScene(Rect rect, Graphics2D* gfx, Keyboard* kbd
 	if (FAILED(hr))
 		throw WND_EXCEPT(hr);
 
+	hr = pGraphics->GetDWriteFactory()->CreateTextFormat(
+		L"Roboto",
+		NULL,
+		DWRITE_FONT_WEIGHT_BOLD,
+		DWRITE_FONT_STYLE_NORMAL,
+		DWRITE_FONT_STRETCH_NORMAL,
+		35.f,
+		L"en-us",
+		&pColumnTitleTextFormat
+	);
+
+	if (FAILED(hr))
+		throw WND_EXCEPT(hr);
+
 	pTitleTextFormat->SetReadingDirection(DWRITE_READING_DIRECTION_LEFT_TO_RIGHT);
 	pTitleTextFormat->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_CENTER);
 	pOptionTextFormat->SetReadingDirection(DWRITE_READING_DIRECTION_LEFT_TO_RIGHT);
+	pColumnTitleTextFormat->SetReadingDirection(DWRITE_READING_DIRECTION_LEFT_TO_RIGHT);
 
 	sideOptions.push_back(L"LESSONS");
 	sideOptions.push_back(L"PROGRESS");
@@ -166,10 +189,12 @@ rescan::DashboardScene::DashboardScene(Rect rect, Graphics2D* gfx, Keyboard* kbd
 	module5Lessons.push_back(L"Lesson 40: The Quotation Mark");
 	module5Lessons.push_back(L"Lesson 41: The Colon Key");
 
-	std::copy(module2Lessons.begin(), module2Lessons.end(), std::back_inserter(progressList));
-	std::copy(module3Lessons.begin(), module3Lessons.end(), std::back_inserter(progressList));
-	std::copy(module4Lessons.begin(), module4Lessons.end(), std::back_inserter(progressList));
-	std::copy(module5Lessons.begin(), module5Lessons.end(), std::back_inserter(progressList));
+	for (size_t i = 0; i < 41; ++i)
+	{
+		std::wstringstream wss;
+		wss << L"Lesson " << i + 1;
+		progressList.push_back(wss.str());
+	}
 }
 
 rescan::DashboardScene::~DashboardScene()
@@ -284,6 +309,7 @@ void rescan::DashboardScene::Draw()
 		sideOptionsMenuRect.bottom += 60;
 	}
 
+	pOptionTextFormat->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_LEADING);
 	if (dashboardScreen == DB_LESSON)
 	{
 		if (moduleIsRendering)
@@ -329,6 +355,7 @@ void rescan::DashboardScene::Draw()
 		else
 		{
 			unsigned selected = 0;
+			unsigned scoreOffset = 0;
 			std::vector<std::wstring>* list = nullptr;
 
 			CComPtr<ID2D1PathGeometry> pUpArrowPath;
@@ -413,6 +440,30 @@ void rescan::DashboardScene::Draw()
 				centerMenuRect.bottom / 3 + 50.f
 			};
 
+			D2D1_RECT_F columnTitleRect = {
+				centerMenuRect.left + PixelsToDIP(40.f),
+				centerMenuRect.bottom / 4,
+				centerMenuRect.right - PixelsToDIP(40.f),
+				centerMenuRect.bottom / 4 + 50.f
+			};
+
+			pColumnTitleTextFormat->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_LEADING);
+			pGraphics->GetRenderTarget()->DrawTextW(
+				L"Title",
+				5,
+				pColumnTitleTextFormat,
+				columnTitleRect,
+				pGray700Brush
+			);
+			pColumnTitleTextFormat->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_TRAILING);
+			pGraphics->GetRenderTarget()->DrawTextW(
+				L"Accuracy",
+				8,
+				pColumnTitleTextFormat,
+				columnTitleRect,
+				pGray700Brush
+			);
+
 			switch (selectedModule)
 			{
 			case 0:
@@ -426,14 +477,17 @@ void rescan::DashboardScene::Draw()
 			case 2:
 				selected = selectedLessonInMod3;
 				list = &module3Lessons;
+				scoreOffset = 12;
 				break;
 			case 3:
 				selected = selectedLessonInMod4;
 				list = &module4Lessons;
+				scoreOffset = 23;
 				break;
 			case 4:
 				selected = selectedLessonInMod5;
 				list = &module5Lessons;
+				scoreOffset = 27;
 				break;
 			}
 
@@ -457,7 +511,7 @@ void rescan::DashboardScene::Draw()
 						pBlackBrush
 					);
 				}
-
+				
 				for (size_t i = 0; i < 8 && j < (*list).size(); ++i, ++j)
 				{
 					if (j == selected)
@@ -467,7 +521,8 @@ void rescan::DashboardScene::Draw()
 							pBlueBrush
 						);
 					}
-
+					// Draw Lesson text.
+					pOptionTextFormat->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_LEADING);
 					pGraphics->GetRenderTarget()->DrawTextW(
 						(*list)[j].c_str(),
 						(*list)[j].length(),
@@ -475,7 +530,20 @@ void rescan::DashboardScene::Draw()
 						optionsRect,
 						pGray700Brush
 					);
-
+					// Draw Accuracy
+					pOptionTextFormat->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_TRAILING);
+					std::wstringstream wss;
+					if (user.scores[j + scoreOffset].frequency > 0 && selectedModule != 0)
+						wss << std::lroundf(user.scores[j + scoreOffset].accuracy) << '%';
+					else
+						wss << "-";
+					pGraphics->GetRenderTarget()->DrawTextW(
+						wss.str().c_str(),
+						wss.str().length(),
+						pOptionTextFormat,
+						optionsRect,
+						pGray700Brush
+					);
 					optionsRect.top += 50;
 					optionsRect.bottom += 50;
 				}

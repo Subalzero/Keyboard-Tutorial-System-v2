@@ -24,7 +24,7 @@ rescan::KeyboardTutorialSystem::KeyboardTutorialSystem(const std::wstring& comma
 	lesson5 = std::make_unique<Lesson5>(rect, wnd.Gfx(), &wnd.kbd, &wnd.mouse, tts);
 	lesson6 = std::make_unique<Lesson6>(rect, wnd.Gfx(), &wnd.kbd, &wnd.mouse, tts);
 	lesson7 = std::make_unique<Lesson7>(rect, wnd.Gfx(), &wnd.kbd, &wnd.mouse, tts);
-	lesson8 = std::make_unique<Lesson8>(rect, wnd.Gfx(), & wnd.kbd, & wnd.mouse, tts);
+	lesson8 = std::make_unique<Lesson8>(rect, wnd.Gfx(), &wnd.kbd, & wnd.mouse, tts);
 	lesson9 = std::make_unique<Lesson9>(rect, wnd.Gfx(), &wnd.kbd, &wnd.mouse, tts);
 	lesson10 = std::make_unique<Lesson10>(rect, wnd.Gfx(), &wnd.kbd, &wnd.mouse, tts);
 	lesson11 = std::make_unique<Lesson11>(rect, wnd.Gfx(), &wnd.kbd, &wnd.mouse, tts);
@@ -338,7 +338,12 @@ void rescan::KeyboardTutorialSystem::SceneHasEnded(Scene* scene, void* context)
 			score.parTime = cont->totalTime;
 			score.wordsPerMinute = cont->wordsPerMinute;
 			score.accuracy = accuracy;
-			score.frequency = ++dashboardScene->GetUser().scores->frequency;
+
+			dashboardScene->GetUser().scores[cont->lesson - 1].accuracy = accuracy;
+			dashboardScene->GetUser().scores[cont->lesson - 1].parTime = cont->totalTime;
+			dashboardScene->GetUser().scores[cont->lesson - 1].wordsPerMinute = cont->wordsPerMinute;
+
+			score.frequency = ++dashboardScene->GetUser().scores[cont->lesson - 1].frequency;
 			userList.AddUserScore(score, menuScene->GetUser().userID, cont->lesson);
 			scoreScene->Begin();
 			scenes.push_back(scoreScene.get());

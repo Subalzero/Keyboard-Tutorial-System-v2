@@ -1,133 +1,30 @@
-﻿  stdafx.cpp
-  Application.cpp
-  DashboardScene.cpp
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(186,26): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(187,27): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(191,26): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(193,19): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(194,27): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(199,27): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(200,26): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(201,19): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(205,26): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(206,27): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(207,19): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(208,19): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(213,27): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(214,32): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(215,27): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(281,3): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(323,5): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(477,6): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
-  DeleteUserScene.cpp
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(605,4): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DeleteUserScene.cpp(106,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DeleteUserScene.cpp(108,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DeleteUserScene.cpp(116,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-  Drawable.cpp
-  Exception.cpp
-  GameMenuScene.cpp
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DeleteUserScene.cpp(123,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\GameMenuScene.cpp(339,16): warning C4244:  '=': conversion from 'float' to 'LONG', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\GameMenuScene.cpp(340,15): warning C4244:  '=': conversion from 'float' to 'LONG', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\GameMenuScene.cpp(354,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\GameMenuScene.cpp(355,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\GameMenuScene.cpp(356,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\GameMenuScene.cpp(357,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\GameMenuScene.cpp(397,2): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\GameMenuScene.cpp(411,4): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\GameMenuScene.cpp(421,4): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\GameMenuScene.cpp(430,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\GameMenuScene.cpp(443,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-  Graphics2D.cpp
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\GameMenuScene.cpp(485,35): warning C4267:  '=': conversion from 'size_t' to 'unsigned int', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\Graphics2D.cpp(26,34): warning C4838:  conversion from 'LONG' to 'UINT32' requires a narrowing conversion
-  ILesson.cpp
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\Graphics2D.cpp(26,59): warning C4838:  conversion from 'LONG' to 'UINT32' requires a narrowing conversion
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\ILesson.cpp(97,37): warning C4267:  '+=': conversion from 'size_t' to 'unsigned int', possible loss of data
-  IntroLessons.cpp
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\ILesson.cpp(162,30): warning C4267:  '=': conversion from 'size_t' to 'unsigned int', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\IntroLessons.cpp(27,8): warning C4244:  'argument': conversion from 'double' to 'FLOAT', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\IntroLessons.cpp(57,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\IntroLessons.cpp(58,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\IntroLessons.cpp(59,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\IntroLessons.cpp(60,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\IntroLessons.cpp(69,2): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\IntroLessons.cpp(219,8): warning C4244:  'argument': conversion from 'double' to 'FLOAT', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\IntroLessons.cpp(249,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\IntroLessons.cpp(250,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\IntroLessons.cpp(251,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\IntroLessons.cpp(252,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\IntroLessons.cpp(261,2): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\IntroLessons.cpp(369,8): warning C4244:  'argument': conversion from 'double' to 'FLOAT', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\IntroLessons.cpp(399,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\IntroLessons.cpp(400,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\IntroLessons.cpp(401,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\IntroLessons.cpp(402,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-  Keyboard.cpp
+﻿  DashboardScene.cpp
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(211,26): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(212,27): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(216,26): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(218,19): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(219,27): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(224,27): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(225,26): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(226,19): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(230,26): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(231,27): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(232,19): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(233,19): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(238,27): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(239,32): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(240,27): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(306,3): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(349,5): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(532,6): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(537,55): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(546,6): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
   KeyboardTutorialSystem.cpp
-  Lessons.cpp
-  Lessons2.cpp
-  Lessons3.cpp
-  Lessons4.cpp
-  Lessons5.cpp
   main.cpp
-  MainMenuScene.cpp
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\IntroLessons.cpp(411,2): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\MainMenuScene.cpp(105,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\MainMenuScene.cpp(112,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\MainMenuScene.cpp(113,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\MainMenuScene.cpp(158,4): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\MainMenuScene.cpp(168,4): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
-  Mouse.cpp
-  NewUserScene.cpp
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\MainMenuScene.cpp(228,29): warning C4267:  '=': conversion from 'size_t' to 'unsigned int', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\NewUserScene.cpp(72,19): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\NewUserScene.cpp(73,24): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\NewUserScene.cpp(74,19): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\NewUserScene.cpp(75,40): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\NewUserScene.cpp(79,25): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-  Compiling...
-  QuitMessageScene.cpp
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\NewUserScene.cpp(81,26): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\QuitMessageScene.cpp(104,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\QuitMessageScene.cpp(106,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\QuitMessageScene.cpp(114,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-  Scene.cpp
-  SceneCallback.cpp
-  ScoreScene.cpp
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\QuitMessageScene.cpp(121,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\ScoreScene.cpp(65,25): warning C4244:  'argument': conversion from 'double' to 'FLOAT', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\ScoreScene.cpp(90,30): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\ScoreScene.cpp(90,25): warning C4244:  '=': conversion from 'float' to 'LONG', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\ScoreScene.cpp(91,29): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\ScoreScene.cpp(91,24): warning C4244:  '=': conversion from 'float' to 'LONG', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\ScoreScene.cpp(92,31): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\ScoreScene.cpp(92,26): warning C4244:  '=': conversion from 'float' to 'LONG', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\ScoreScene.cpp(93,32): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\ScoreScene.cpp(93,27): warning C4244:  '=': conversion from 'float' to 'LONG', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\ScoreScene.cpp(107,2): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\ScoreScene.cpp(123,2): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\ScoreScene.cpp(139,2): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\ScoreScene.cpp(155,26): warning C4244:  'argument': conversion from 'double' to 'FLOAT', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\ScoreScene.cpp(166,27): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\ScoreScene.cpp(168,27): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-  TextToSpeech.cpp
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\ScoreScene.cpp(170,27): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-  TTSVoiceCallback.cpp
-  UserList.cpp
-  UserListScene.cpp
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\TextToSpeech.cpp(130,31): warning C4244:  'argument': conversion from 'ULONGLONG' to 'ULONG', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\UserListScene.cpp(55,19): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\UserListScene.cpp(69,4): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\UserListScene.cpp(79,4): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
-  Utils.cpp
-  View.cpp
-  Window.cpp
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\UserListScene.cpp(150,36): warning C4267:  '=': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(673,4): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
   Generating code
-  2561 of 3717 functions (68.9%) were compiled, the rest were copied from previous compilation.
-    1811 functions were new in current compilation
-    210 functions had inline decision re-evaluated but remain unchanged
+  34 of 3698 functions ( 0.9%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    69 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Keyboard Tutorial System.vcxproj -> C:\Users\Alzer\source\repos\KeyboardTutorialSystem\x64\Release\Keyboard Tutorial System.exe

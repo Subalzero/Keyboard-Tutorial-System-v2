@@ -35,11 +35,13 @@ namespace rescan
 		CComPtr<ID2D1SolidColorBrush> pBlackBrush;
 		CComPtr<ID2D1SolidColorBrush> pGray800Brush;
 		CComPtr<ID2D1SolidColorBrush> pGray700Brush;
+		CComPtr<ID2D1SolidColorBrush> pGray600Brush;
 		CComPtr<ID2D1SolidColorBrush> pGray900Brush;
 		CComPtr<ID2D1SolidColorBrush> pBlueBrush;
 		CComPtr<ID2D1SolidColorBrush> pLightBlueBrush;
 		CComPtr<ID2D1SolidColorBrush> pLightGrayBrush;
 		CComPtr<IDWriteTextFormat> pTitleTextFormat;
+		CComPtr<IDWriteTextFormat> pColumnTitleTextFormat;
 		CComPtr<IDWriteTextFormat> pOptionTextFormat;
 
 		Keyboard* kbd;
