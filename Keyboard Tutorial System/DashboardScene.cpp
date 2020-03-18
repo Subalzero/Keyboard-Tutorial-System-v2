@@ -340,13 +340,26 @@ void rescan::DashboardScene::Draw()
 						pBlueBrush
 					);
 				}
-				pGraphics->GetRenderTarget()->DrawTextW(
-					moduleNames[i].c_str(),
-					moduleNames[i].length(),
-					pOptionTextFormat,
-					optionsRect,
-					pGray700Brush
-				);
+				if (i > user->moduleLevel)
+				{
+					pGraphics->GetRenderTarget()->DrawTextW(
+						moduleNames[i].c_str(),
+						moduleNames[i].length(),
+						pOptionTextFormat,
+						optionsRect,
+						pGray600Brush
+					);
+				}
+				else
+				{
+					pGraphics->GetRenderTarget()->DrawTextW(
+						moduleNames[i].c_str(),
+						moduleNames[i].length(),
+						pOptionTextFormat,
+						optionsRect,
+						pGray700Brush
+					);
+				}
 
 				optionsRect.top += 50;
 				optionsRect.bottom += 50;
@@ -522,28 +535,60 @@ void rescan::DashboardScene::Draw()
 						);
 					}
 					// Draw Lesson text.
-					pOptionTextFormat->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_LEADING);
-					pGraphics->GetRenderTarget()->DrawTextW(
-						(*list)[j].c_str(),
-						(*list)[j].length(),
-						pOptionTextFormat,
-						optionsRect,
-						pGray700Brush
-					);
-					// Draw Accuracy
-					pOptionTextFormat->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_TRAILING);
-					std::wstringstream wss;
-					if (user.scores[j + scoreOffset].frequency > 0 && selectedModule != 0)
-						wss << std::lroundf(user.scores[j + scoreOffset].accuracy) << '%';
+					
+					if (selectedModule == user->moduleLevel && j > user->lessonLevel)
+					{
+						pOptionTextFormat->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_LEADING);
+						pGraphics->GetRenderTarget()->DrawTextW(
+							(*list)[j].c_str(),
+							(*list)[j].length(),
+							pOptionTextFormat,
+							optionsRect,
+							pGray600Brush
+						);
+
+						// Draw Accuracy
+						pOptionTextFormat->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_TRAILING);
+						std::wstringstream wss;
+						if (user->scores[j + scoreOffset].frequency > 0 && selectedModule != 0)
+							wss << std::lroundf(user->scores[j + scoreOffset].accuracy) << '%';
+						else
+							wss << "-";
+						pGraphics->GetRenderTarget()->DrawTextW(
+							wss.str().c_str(),
+							wss.str().length(),
+							pOptionTextFormat,
+							optionsRect,
+							pGray600Brush
+						);
+					}
 					else
-						wss << "-";
-					pGraphics->GetRenderTarget()->DrawTextW(
-						wss.str().c_str(),
-						wss.str().length(),
-						pOptionTextFormat,
-						optionsRect,
-						pGray700Brush
-					);
+					{
+						pOptionTextFormat->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_LEADING);
+						pGraphics->GetRenderTarget()->DrawTextW(
+							(*list)[j].c_str(),
+							(*list)[j].length(),
+							pOptionTextFormat,
+							optionsRect,
+							pGray700Brush
+						);
+
+						// Draw Accuracy
+						pOptionTextFormat->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_TRAILING);
+						std::wstringstream wss;
+						if (user->scores[j + scoreOffset].frequency > 0 && selectedModule != 0)
+							wss << std::lroundf(user->scores[j + scoreOffset].accuracy) << '%';
+						else
+							wss << "-";
+						pGraphics->GetRenderTarget()->DrawTextW(
+							wss.str().c_str(),
+							wss.str().length(),
+							pOptionTextFormat,
+							optionsRect,
+							pGray700Brush
+						);
+					}
+					pOptionTextFormat->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_LEADING);
 					optionsRect.top += 50;
 					optionsRect.bottom += 50;
 				}
@@ -654,6 +699,89 @@ void rescan::DashboardScene::Draw()
 			centerMenuRect.bottom / 3 + 50.f
 		};
 
+		D2D1_RECT_F columnHeadTitleRect = {
+			centerMenuRect.left + PixelsToDIP(40.f),
+			centerMenuRect.bottom / 4,
+			centerMenuRect.right - PixelsToDIP(40.f),
+			centerMenuRect.bottom / 4 + 50.f
+		};
+
+		D2D1_RECT_F columnHeadFreqRect = {
+			(centerMenuRect.right - PixelsToDIP(40.f)) / 2,
+			centerMenuRect.bottom / 4,
+			((centerMenuRect.right - PixelsToDIP(40.f)) / 2) + (((centerMenuRect.right - PixelsToDIP(40.f)) / 2) / 3),
+			centerMenuRect.bottom / 4 + 50.f
+		};
+
+		D2D1_RECT_F columnItemFreqRect = {
+			(centerMenuRect.right - PixelsToDIP(40.f)) / 2,
+			centerMenuRect.bottom / 3,
+			((centerMenuRect.right - PixelsToDIP(40.f)) / 2) + (((centerMenuRect.right - PixelsToDIP(40.f)) / 2) / 3),
+			centerMenuRect.bottom / 3 + 50.f
+		};
+
+		D2D1_RECT_F columnHeadAccRect = {
+			((centerMenuRect.right - PixelsToDIP(40.f)) / 2) + (((centerMenuRect.right - PixelsToDIP(40.f)) / 2) / 3),
+			centerMenuRect.bottom / 4,
+			((centerMenuRect.right - PixelsToDIP(40.f)) / 2) + (((centerMenuRect.right - PixelsToDIP(40.f))) / 3),
+			centerMenuRect.bottom / 4 + 50.f
+		};
+
+
+		D2D1_RECT_F columnItemAccRect = {
+			((centerMenuRect.right - PixelsToDIP(40.f)) / 2) + (((centerMenuRect.right - PixelsToDIP(40.f)) / 2) / 3),
+			centerMenuRect.bottom / 3,
+			((centerMenuRect.right - PixelsToDIP(40.f)) / 2) + (((centerMenuRect.right - PixelsToDIP(40.f))) / 3),
+			centerMenuRect.bottom / 3 + 50.f
+		};
+
+		D2D1_RECT_F columnHeadWPMRect = {
+			((centerMenuRect.right - PixelsToDIP(40.f)) / 2) + (((centerMenuRect.right - PixelsToDIP(40.f))) / 3),
+			centerMenuRect.bottom / 4,
+			centerMenuRect.right - PixelsToDIP(40.f),
+			centerMenuRect.bottom / 4 + 50.f
+		};
+
+		D2D1_RECT_F columnItemWPMRect = {
+			((centerMenuRect.right - PixelsToDIP(40.f)) / 2) + (((centerMenuRect.right - PixelsToDIP(40.f))) / 3),
+			centerMenuRect.bottom / 3,
+			centerMenuRect.right - PixelsToDIP(40.f),
+			centerMenuRect.bottom / 3 + 50.f
+		};
+
+		pColumnTitleTextFormat->SetReadingDirection(DWRITE_READING_DIRECTION_LEFT_TO_RIGHT);
+		pColumnTitleTextFormat->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_LEADING);
+		pGraphics->GetRenderTarget()->DrawTextW(
+			L"Title",
+			5,
+			pColumnTitleTextFormat,
+			columnHeadTitleRect,
+			pGray700Brush
+		);
+
+		pColumnTitleTextFormat->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_CENTER);
+		pGraphics->GetRenderTarget()->DrawTextW(
+			L"Frequency",
+			9,
+			pColumnTitleTextFormat,
+			columnHeadFreqRect,
+			pGray700Brush
+		);
+		pGraphics->GetRenderTarget()->DrawTextW(
+			L"Accuracy",
+			8,
+			pColumnTitleTextFormat,
+			columnHeadAccRect,
+			pGray700Brush
+		);
+		pGraphics->GetRenderTarget()->DrawTextW(
+			L"WPM",
+			3,
+			pColumnTitleTextFormat,
+			columnHeadWPMRect,
+			pGray700Brush
+		);
+
 		for (size_t i = 0; i < 8 && j < progressList.size(); ++i, ++j)
 		{
 			if (j == selectedProgressItem)
@@ -663,7 +791,7 @@ void rescan::DashboardScene::Draw()
 					pBlueBrush
 				);
 			}
-
+			pOptionTextFormat->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_LEADING);
 			pGraphics->GetRenderTarget()->DrawTextW(
 				progressList[j].c_str(),
 				progressList[j].length(),
@@ -672,8 +800,44 @@ void rescan::DashboardScene::Draw()
 				pGray700Brush
 			);
 
+			pOptionTextFormat->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_CENTER);
+			std::wstring freq = user->scores[j].frequency > 0 ? std::to_wstring(user->scores[j].frequency) : L"-";
+			std::wstring acc = user->scores[j].frequency > 0 ? std::to_wstring(std::lroundf(user->scores[j].accuracy)).append(L"%") : L"-";
+			std::wstring wpm = user->scores[j].frequency > 0 ? std::to_wstring(std::lroundf(user->scores[j].wordsPerMinute)) : L"-";
+			pGraphics->GetRenderTarget()->DrawTextW(
+				freq.c_str(),
+				freq.length(),
+				pOptionTextFormat,
+				columnItemFreqRect,
+				pGray700Brush
+			);
+
+			pGraphics->GetRenderTarget()->DrawTextW(
+				acc.c_str(),
+				acc.length(),
+				pOptionTextFormat,
+				columnItemAccRect,
+				pGray700Brush
+			);
+
+			pGraphics->GetRenderTarget()->DrawTextW(
+				wpm.c_str(),
+				wpm.length(),
+				pOptionTextFormat,
+				columnItemWPMRect,
+				pGray700Brush
+			);
+
+			pOptionTextFormat->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_LEADING);
+
 			optionsRect.top += 50;
 			optionsRect.bottom += 50;
+			columnItemFreqRect.top += 50;
+			columnItemFreqRect.bottom += 50;
+			columnItemAccRect.top += 50;
+			columnItemAccRect.bottom += 50;
+			columnItemWPMRect.top += 50;
+			columnItemWPMRect.bottom += 50;
 		}
 	}
 }
@@ -769,7 +933,11 @@ void rescan::DashboardScene::Down()
 	{
 		if (moduleIsRendering)
 		{
-			if (selectedModule + 1ul < moduleNames.size())
+			if (selectedModule == user->moduleLevel)
+			{
+				wss << L"Please finish the current module in order to proceed the next.";
+			}
+			else if (selectedModule + 1ul < moduleNames.size())
 			{
 				++selectedModule;
 				wss << moduleNames[selectedModule];
@@ -780,26 +948,46 @@ void rescan::DashboardScene::Down()
 			switch (selectedModule)
 			{
 			case 0:
-				if (selectedLessonInMod1 + 1 < module1Lessons.size())
+				if (selectedModule == user->moduleLevel && selectedLessonInMod1 == user->lessonLevel)
+				{
+					wss << L"Please finish the current lesson in order to proceed the next.";
+				}
+				else if (selectedLessonInMod1 + 1 < module1Lessons.size())
 				{
 					++selectedLessonInMod1;
 					wss << module1Lessons[selectedLessonInMod1];
 				}
 				break;
 			case 1:
-				if (selectedLessonInMod2 + 1 < module2Lessons.size())
+				if (selectedModule == user->moduleLevel && selectedLessonInMod2 == user->lessonLevel)
+				{
+					wss << L"Please finish the current lesson in order to proceed the next.";
+				}
+				else if (selectedLessonInMod2 + 1 < module2Lessons.size())
 					wss << module2Lessons[++selectedLessonInMod2];
 				break;
 			case 2:
-				if (selectedLessonInMod3 + 1 < module3Lessons.size())
+				if (selectedModule == user->moduleLevel && selectedLessonInMod3 == user->lessonLevel)
+				{
+					wss << L"Please finish the current lesson in order to proceed the next.";
+				}
+				else if (selectedLessonInMod3 + 1 < module3Lessons.size())
 					wss << module3Lessons[++selectedLessonInMod3];
 				break;
 			case 3:
-				if (selectedLessonInMod4 + 1 < module4Lessons.size())
+				if (selectedModule == user->moduleLevel && selectedLessonInMod4 == user->lessonLevel)
+				{
+					wss << L"Please finish the current lesson in order to proceed the next.";
+				}
+				else if (selectedLessonInMod4 + 1 < module4Lessons.size())
 					wss << module4Lessons[++selectedLessonInMod4];
 				break;
 			case 4:
-				if (selectedLessonInMod5 + 1 < module5Lessons.size())
+				if (selectedModule == user->moduleLevel && selectedLessonInMod5 == user->lessonLevel)
+				{
+					wss << L"Please finish the current lesson in order to proceed the next.";
+				}
+				else if (selectedLessonInMod5 + 1 < module5Lessons.size())
 					wss << module5Lessons[++selectedLessonInMod5];
 				break;
 			}
@@ -825,14 +1013,14 @@ void rescan::DashboardScene::Tab()
 	tts->speak(wss.str().c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
 }
 
-void rescan::DashboardScene::SetUser(User user)
+void rescan::DashboardScene::SetUser(User* user)
 {
 	this->user = user;
 }
 
 rescan::User& rescan::DashboardScene::GetUser()
 {
-	return user;
+	return *user;
 }
 
 unsigned rescan::DashboardScene::GetSelected()

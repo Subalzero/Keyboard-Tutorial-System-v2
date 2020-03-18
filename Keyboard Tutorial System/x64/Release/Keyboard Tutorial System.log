@@ -15,16 +15,50 @@ C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\Dash
 C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(239,32): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
 C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(240,27): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
 C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(306,3): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(349,5): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(532,6): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(537,55): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(546,6): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(351,6): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(361,6): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(539,51): warning C4018:  '>': signed/unsigned mismatch
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(548,7): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(554,57): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(563,7): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(574,7): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(580,57): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(589,7): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(801,4): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(805,99): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(806,99): warning C4244:  'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(813,4): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(821,4): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
+  DeleteUserScene.cpp
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(829,4): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DeleteUserScene.cpp(106,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DeleteUserScene.cpp(108,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DeleteUserScene.cpp(116,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
+  GameMenuScene.cpp
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DeleteUserScene.cpp(123,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\GameMenuScene.cpp(339,16): warning C4244:  '=': conversion from 'float' to 'LONG', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\GameMenuScene.cpp(340,15): warning C4244:  '=': conversion from 'float' to 'LONG', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\GameMenuScene.cpp(354,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\GameMenuScene.cpp(355,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\GameMenuScene.cpp(356,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\GameMenuScene.cpp(357,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\GameMenuScene.cpp(397,2): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\GameMenuScene.cpp(411,4): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\GameMenuScene.cpp(421,4): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\GameMenuScene.cpp(430,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\GameMenuScene.cpp(443,17): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
   KeyboardTutorialSystem.cpp
+  UserList.cpp
+  UserListScene.cpp
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\GameMenuScene.cpp(485,35): warning C4267:  '=': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\UserListScene.cpp(55,19): warning C4244:  'argument': conversion from 'LONG' to 'float', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\UserListScene.cpp(69,4): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\UserListScene.cpp(79,4): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
   main.cpp
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\DashboardScene.cpp(673,4): warning C4267:  'argument': conversion from 'size_t' to 'UINT32', possible loss of data
+C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\UserListScene.cpp(150,36): warning C4267:  '=': conversion from 'size_t' to 'unsigned int', possible loss of data
   Generating code
-  34 of 3698 functions ( 0.9%) were compiled, the rest were copied from previous compilation.
-    1 functions were new in current compilation
-    69 functions had inline decision re-evaluated but remain unchanged
+  80 of 3724 functions ( 2.1%) were compiled, the rest were copied from previous compilation.
+    29 functions were new in current compilation
+    236 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Keyboard Tutorial System.vcxproj -> C:\Users\Alzer\source\repos\KeyboardTutorialSystem\x64\Release\Keyboard Tutorial System.exe

@@ -32,8 +32,9 @@ namespace rescan
 		~UserList();
 		bool AddEmptyUser(std::wstring username);
 		void AddUserScore(BestScore score, int userID, int lesson);
-		std::optional<User> getUser(int userID);
+		std::optional<std::reference_wrapper<User>> getUser(int userID);
 		void RemoveUser(int userID);
+		void UpdateProgress(int userID, int lessonLev);
 		int Find(std::wstring userName) const;
 		User& operator[] (unsigned index);
 	public:

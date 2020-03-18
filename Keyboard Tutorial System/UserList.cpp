@@ -21,6 +21,7 @@ bool rescan::UserList::AddEmptyUser(std::wstring username)
 	User user;
 	user.userName = username;
 	user.lessonLevel = 0;
+	user.moduleLevel = 1;
 	for (int i = 0; i < 41; ++i) {
 		user.scores[i] = { 0 };
 	}
@@ -46,7 +47,7 @@ void rescan::UserList::AddUserScore(BestScore score, int userID, int lesson)
 	writeToFile();
 }
 
-std::optional<rescan::User> rescan::UserList::getUser(int userID)
+std::optional<std::reference_wrapper<rescan::User>> rescan::UserList::getUser(int userID)
 {
 	for (auto iter = users.begin(); iter != users.end(); ++iter)
 	{
@@ -70,6 +71,30 @@ void rescan::UserList::RemoveUser(int userID)
 		}
 	}
 	writeToFile();
+}
+
+void rescan::UserList::UpdateProgress(int userID, int lessonLev)
+{
+	if (auto user = getUser(userID))
+	{
+		if (user->get().lessonLevel < lessonLev)
+		{
+			user->get().lessonLevel = lessonLev;
+			if (lessonLev >= 12)
+			{
+				user->get().moduleLevel = user->get().moduleLevel >= 2 ? user->get().moduleLevel : 2;
+			}
+			else if (lessonLev >= 23)
+			{
+				user->get().moduleLevel = user->get().moduleLevel >= 3 ? user->get().moduleLevel : 3;
+			}
+			else if (lessonLev >= 27)
+			{
+				user->get().moduleLevel = user->get().moduleLevel >= 4 ? user->get().moduleLevel : 4;
+			}
+		}
+		writeToFile();
+	}
 }
 
 int rescan::UserList::Find(std::wstring userName) const
@@ -105,6 +130,7 @@ void rescan::UserList::writeToFile()
 			ofs << user.userID << std::endl;
 			ofs << user.fileLocation << std::endl;
 			ofs << user.lessonLevel << std::endl;
+			ofs << user.moduleLevel << std::endl;
 			std::wofstream fs(user.fileLocation);
 			if (fs.is_open())
 			{
@@ -137,6 +163,7 @@ void rescan::UserList::readFromFile()
 			wifs >> user.userID; wifs.get();
 			std::getline(wifs, user.fileLocation);
 			wifs >> user.lessonLevel; wifs.get();
+			wifs >> user.moduleLevel; wifs.get();
 			std::wifstream fs(user.fileLocation);
 			if (fs.is_open())
 			{

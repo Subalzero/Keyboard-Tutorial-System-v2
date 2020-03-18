@@ -140,6 +140,8 @@ rescan::KeyboardTutorialSystem::KeyboardTutorialSystem(const std::wstring& comma
 	focusedScene = mainMenuScene.get();
 	focusedScene->Begin();
 	scenes.push_back(focusedScene);
+
+	ShowCursor(FALSE);
 }
 
 rescan::KeyboardTutorialSystem::~KeyboardTutorialSystem()
@@ -154,6 +156,7 @@ rescan::KeyboardTutorialSystem::~KeyboardTutorialSystem()
 		delete menuScene;
 		menuScene = nullptr;
 	}
+	ShowCursor(TRUE);
 }
 
 void rescan::KeyboardTutorialSystem::SetFocusedScene(Scene* scene)
@@ -281,7 +284,7 @@ void rescan::KeyboardTutorialSystem::SceneHasEnded(Scene* scene, void* context)
 		}
 		else if (cont->willDeleteUser)
 		{
-			deleteUserScene->SetUser(cont->user);
+			deleteUserScene->SetUser(*(cont->user));
 			focusedScene = deleteUserScene.get();
 			focusedScene->Begin();
 			return;
@@ -344,7 +347,8 @@ void rescan::KeyboardTutorialSystem::SceneHasEnded(Scene* scene, void* context)
 			dashboardScene->GetUser().scores[cont->lesson - 1].wordsPerMinute = cont->wordsPerMinute;
 
 			score.frequency = ++dashboardScene->GetUser().scores[cont->lesson - 1].frequency;
-			userList.AddUserScore(score, menuScene->GetUser().userID, cont->lesson);
+			userList.AddUserScore(score, dashboardScene->GetUser().userID, cont->lesson);
+			userList.UpdateProgress(dashboardScene->GetUser().userID, cont->lesson);
 			scoreScene->Begin();
 			scenes.push_back(scoreScene.get());
 			focusedScene = scoreScene.get();
