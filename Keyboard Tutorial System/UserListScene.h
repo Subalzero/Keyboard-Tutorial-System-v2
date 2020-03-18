@@ -14,7 +14,7 @@ namespace rescan
 			unsigned selected;
 			bool willAddUser;
 			bool isExit;
-			User user;
+			User* user;
 		};
 		UserListScene(Rect rect, Graphics2D* gfx, TextToSpeech* tts, Keyboard* kbd, UserList* userList);
 		virtual ~UserListScene();

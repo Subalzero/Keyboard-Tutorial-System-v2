@@ -135,7 +135,7 @@ void rescan::UserListScene::KeyboardEvents(const Keyboard::Event& ev)
 			if (selected == userList->users.size())
 				call.willAddUser = true;
 			else if (selected < userList->users.size())
-				call.user = userList->users[selected];
+				call.user = &userList->users[selected];
 			if (callback)
 				callback->SceneHasEnded(this, &call);
 			break;

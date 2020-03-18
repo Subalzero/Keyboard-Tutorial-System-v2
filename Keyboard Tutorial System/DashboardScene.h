@@ -15,7 +15,7 @@ namespace rescan
 			bool willDeleteUser;
 			int selectedLesson;
 			unsigned selectedModule;
-			User user;
+			User* user;
 		};
 		DashboardScene(Rect rect, Graphics2D* gfx, Keyboard* kbd, TextToSpeech* tts);
 		~DashboardScene();
@@ -25,7 +25,7 @@ namespace rescan
 		void Up();
 		void Down();
 		void Tab();
-		void SetUser(User user);
+		void SetUser(User* user);
 		User& GetUser();
 		unsigned GetSelected();
 		void KeyboardEvents(const Keyboard::Event& ev) override;
@@ -49,7 +49,7 @@ namespace rescan
 		unsigned dashboardScreen;
 		bool moduleIsRendering;
 
-		User user;
+		User* user;
 
 		unsigned selectedSideOption;
 		unsigned selectedModule;
