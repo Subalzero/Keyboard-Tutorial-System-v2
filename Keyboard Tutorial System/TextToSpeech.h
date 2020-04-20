@@ -49,6 +49,8 @@ namespace rescan
 		IXAudio2SourceVoice* m_pSourceVoice;
 		CSpStreamFormat m_format;
 
+		std::mutex mut;
+
 		int m_prevFlags;
 	};
 

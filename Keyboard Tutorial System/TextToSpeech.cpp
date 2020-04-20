@@ -79,14 +79,16 @@ rescan::TextToSpeech::~TextToSpeech()
 
 void rescan::TextToSpeech::speak(const wchar_t* str, int flags)
 {
+	std::lock_guard lock(mut);
 	// Clear all.
 	if (flags & TTSFLAGS_PURGEBEFORESPEAK)
 	{
 		m_pSourceVoice->Stop();
+		m_pSourceVoice->FlushSourceBuffers();
+		Sleep(10);
 		while (!m_buffers.empty())
 			ThreadSafePop(m_buffers);
 		m_callback.nBuffers = 0;
-		m_pSourceVoice->FlushSourceBuffers();
 	}
 	m_cpStream.Release();
 	m_cpBaseStream.Release();
