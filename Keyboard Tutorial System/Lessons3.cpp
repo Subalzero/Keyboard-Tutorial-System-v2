@@ -8,7 +8,7 @@ rescan::Lesson21::Lesson21(Rect rect, Graphics2D* graphics, Keyboard* kbd, Mouse
 
 void rescan::Lesson21::SpeakCurrentItem()
 {
-	if (index >= 21)
+	if (index >= 15)
 	{
 		tts->speak(itemList[index].c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
 	}
@@ -43,6 +43,11 @@ rescan::Lesson22::Lesson22(Rect rect, Graphics2D* graphics, Keyboard* kbd, Mouse
 
 void rescan::Lesson22::SpeakCurrentItem()
 {
+	if (index >= 22)
+	{
+		tts->speak(itemList[index].c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
+	}
+	else
 	{
 		SayHint();
 	}
@@ -73,6 +78,11 @@ rescan::Lesson23::Lesson23(Rect rect, Graphics2D* graphics, Keyboard* kbd, Mouse
 
 void rescan::Lesson23::SpeakCurrentItem()
 {
+	if (index >= 18)
+	{
+		tts->speak(itemList[index].c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
+	}
+	else
 	{
 		SayHint();
 	}

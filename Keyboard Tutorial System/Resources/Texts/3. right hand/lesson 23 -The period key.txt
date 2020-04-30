@@ -16,3 +16,15 @@ m.m.
 .l.l
 .k.k
 .j.j
+yes.
+no.
+mabe.
+period.
+stop.
+end.
+shift.
+daft.
+mall.
+lame.
+same.
+the end.

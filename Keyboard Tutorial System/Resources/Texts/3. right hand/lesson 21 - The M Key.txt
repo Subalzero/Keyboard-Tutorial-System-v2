@@ -13,12 +13,6 @@ fmtm
 fmrm
 fmen
 fmem
-fmvm
-jmnm
-jmnm
-jmnm
-fmgm
-jmkj
 mom
 mad
 made
@@ -31,9 +25,8 @@ meat
 meal
 monster
 mac and cheese
-Sam
-Matt
-March
-Matt make me mad.
-tired.
-Some men swim.
+sam
+matt
+march
+matt make me mad
+some men swim

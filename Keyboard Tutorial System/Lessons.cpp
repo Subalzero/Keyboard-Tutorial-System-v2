@@ -112,7 +112,7 @@ void rescan::Lesson3::LoadLessons()
 
 void rescan::Lesson3::SpeakCurrentItem()
 {
-	if (index >= 18)
+	if (index >= 17)
 	{
 		tts->speak(itemList[index].c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
 	}
@@ -192,7 +192,7 @@ void rescan::Lesson5::LoadLessons()
 
 void rescan::Lesson5::SpeakCurrentItem()
 {
-	if (index >= 18)
+	if (index >= 16)
 	{
 		tts->speak(itemList[index].c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
 	}
@@ -232,7 +232,7 @@ void rescan::Lesson6::LoadLessons()
 
 void rescan::Lesson6::SpeakCurrentItem()
 {
-	if (index >= 19)
+	if (index >= 14)
 	{
 		tts->speak(itemList[index].c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
 	}
@@ -271,7 +271,7 @@ void rescan::Lesson7::LoadLessons()
 
 void rescan::Lesson7::SpeakCurrentItem()
 {
-	if (index >= 20)
+	if (index >= 18)
 	{
 		tts->speak(itemList[index].c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
 	}
@@ -349,7 +349,7 @@ void rescan::Lesson9::LoadLessons()
 
 void rescan::Lesson9::SpeakCurrentItem()
 {
-	if (index >= 19)
+	if (index >= 18)
 	{
 		tts->speak(itemList[index].c_str(), TTSFLAGS_ASYNC | TTSFLAGS_PURGEBEFORESPEAK);
 	}

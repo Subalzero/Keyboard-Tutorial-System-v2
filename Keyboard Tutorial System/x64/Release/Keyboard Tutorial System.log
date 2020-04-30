@@ -1,8 +1,8 @@
-﻿  TextToSpeech.cpp
-C:\Users\Alzer\source\repos\KeyboardTutorialSystem\Keyboard Tutorial System\TextToSpeech.cpp(132,31): warning C4244:  'argument': conversion from 'ULONGLONG' to 'ULONG', possible loss of data
+﻿  Lessons2.cpp
+  Lessons3.cpp
   Generating code
-  73 of 3724 functions ( 2.0%) were compiled, the rest were copied from previous compilation.
+  9 of 3724 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    8 functions had inline decision re-evaluated but remain unchanged
+    16 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Keyboard Tutorial System.vcxproj -> C:\Users\Alzer\source\repos\KeyboardTutorialSystem\x64\Release\Keyboard Tutorial System.exe

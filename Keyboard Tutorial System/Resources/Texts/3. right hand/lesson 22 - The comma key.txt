@@ -5,13 +5,27 @@
 ,l,l
 ,n,n
 ,m,m
+,lo
+,ki
+,mn
+,;p
+pop,
 no,
 out,
 hop,
 map,
-mop, map
-,,
+mop, 
+map,,
 ,;,;
 l,l,
 k,k,
 j,j,
+yes,
+no,
+maybe,
+comma,
+pause,
+hello, angel
+drew, asked
+lame excuse,
+she, was there
